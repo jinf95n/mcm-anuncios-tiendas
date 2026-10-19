@@ -168,3 +168,144 @@ Cada sección lleva su claqueta "TOMA 0X". Tres secciones fijas (03, 06 y 09), s
 7. ¿Sirve si mi tienda no es Tiendanube?
 
 Las respuestas van como borrador en `content.ts`. "Formas de pago" queda afuera hasta que se defina.
+
+## Brief original
+
+Pegado entero por Nacho antes del paso 7, sin resumir. Es la fuente de los textos. Donde difiere de las decisiones de arriba (precios de relleno, estructura de 13 tomas, fórmula de la calculadora), mandan las decisiones.
+
+> **Brief — One page de alta conversión: "Te armamos todo" para tiendas online**
+
+### Objetivo de la página
+Que el dueño de una tienda online escriba por WhatsApp para pedir su **muestra gratis**. Es la única conversión. El botón de WhatsApp se repite en toda la página y queda fijo en celular.
+
+### Concepto
+Servicio completo, hecho por nosotros:
+1. **Analizamos tu tienda** y decidimos qué productos conviene anunciar.
+2. **Te hacemos los anuncios:** fotos y videos con calidad de comercial, a una fracción del precio de una agencia o productora.
+3. **Te dejamos Meta configurado** para que corras los anuncios.
+4. **Te dejamos Claude conectado a tu tienda** (opcional) para que hagas tus análisis, cambios de precios y preparación de fechas, hablándole.
+
+**Lo único que pone el cliente:** el dinero de la pauta y, si quiere la herramienta, la suscripción a Claude Pro.
+
+### Promesa
+Titular base: "Anuncios con calidad de agencia, por una fracción del precio. Y decididos con los datos de tu tienda."
+Variante: "Te armamos todo: análisis, anuncios y Meta listo para vender. Vos solo ponés la pauta."
+
+### Público
+- Dueños de tiendas online que manejan todo ellos mismos, sin agencia, con catálogo amplio e Instagram activo.
+- **Foco principal: Tiendanube**, porque el análisis automático y Claude conectado funcionan solo con Tiendanube.
+- Tiendas de otras plataformas: igual pueden contratar anuncios + setup de Meta. Mencionarlo en una línea o en preguntas frecuentes, sin cambiar el foco.
+
+### Dolores (sección "problema")
+- Una agencia o productora de video es cara y tarda semanas.
+- Los anuncios caseros se ven caseros y no venden.
+- Se anuncia a ojo, no lo que conviene (productos con mucho stock que nadie empuja).
+- Configurar Meta (cuenta publicitaria, conexión con la tienda) es un lío técnico.
+- Fechas fuertes (Cyber, Black Friday, Navidad, Hot Sale) que exigen anuncios nuevos.
+- Tareas de la tienda que llevan horas: subir precios, revisar stock, pedidos pagados sin despachar.
+
+### Bloque central: calidad + precio vs. agencia
+Es la sección más importante después de la portada. Va con ejemplos visuales grandes.
+
+#### Formatos de anuncios
+- Fotos de producto con calidad de estudio.
+- Piezas estáticas para redes (feed, historias).
+- Videos estilo comercial.
+- Videos tipo UGC: una persona recomendando el producto.
+Se hacen con IA a partir del link del producto, usando las fotos, el logo y los colores de la marca. No nombrar la herramienta en la página.
+
+#### Comparación (tabla)
+| | Agencia / productora | Nosotros |
+|---|---|---|
+| Precio | [precio promedio en Argentina — a verificar] | Desde USD 100-150 por 20 piezas |
+| Rodaje, modelos, locación | Sí, y se paga | No hace falta |
+| Tiempo de entrega | Semanas | Días |
+| Versiones para probar | Pocas, cada cambio cuesta | Muchas versiones del mismo producto |
+| Qué producto se anuncia | Lo que decide el cliente | Lo que conviene según los datos de la tienda |
+| Meta configurado | Aparte | Incluido |
+
+#### Por qué es más barato sin ser peor
+Sin rodaje, sin modelos, sin locación y sin equipo de filmación. El producto real de la marca, en escenas de calidad de comercial.
+
+### Del análisis a los anuncios
+| Lo que sale del análisis | Anuncio |
+|---|---|
+| Más vendidos | UGC / recomendación |
+| Productos gancho para una fecha | Anuncio de oferta |
+| Quietos con mucho stock | Liquidación |
+| Productos que se compran juntos | Anuncio de combo |
+| Ficha floja en un producto que vende | Fotos nuevas de producto |
+
+### Setup de Meta (incluido)
+- Configuración de la cuenta publicitaria y conexión con la tienda.
+- Primeras campañas armadas con los anuncios, listas para lanzar.
+- El cliente queda con el control total de su cuenta y de su dinero.
+- Detalle exacto de lo que incluye: a definir.
+- Gestión continua de la pauta: opcional, a definir.
+
+### Claude conectado a tu tienda (opcional, solo Tiendanube)
+Te lo dejamos instalado con tus reglas (tono de marca, políticas, descuento máximo), con capacitación y una guía de frases. Requisito: suscripción a Claude Pro, que se paga aparte, a Anthropic. Si no la quiere, el análisis lo hacemos nosotros con su autorización de acceso a la tienda.
+
+#### Qué puede hacer (resumido, sin protagonismo)
+- **Reporte semanal:** ventas vs. semana anterior, más vendidos, quietos, qué reponer, pedidos pagados sin enviar, clientes que repiten, alertas de precios mal cargados y productos sin stock, y 3 acciones concretas.
+- **Preparar fechas de venta:** auditoría, ofertas gancho, liquidación y combos, promociones creadas sin pasar el descuento máximo, checklist de la semana previa.
+- **Actualizar precios:** subas o bajas en bloque, redondeo comercial, vista previa y vuelta atrás.
+- **Más:** textos para Instagram, descripciones y SEO, respuestas a consultas frecuentes, cruce de la lista del proveedor con los precios.
+- **Seguridad:** nunca cambia nada sin mostrar antes la vista previa y pedir confirmación.
+
+### Cómo funciona (4 pasos)
+1. Nos pasás el link de tu tienda.
+2. Analizamos qué conviene anunciar.
+3. Hacemos los anuncios y te dejamos Meta listo.
+4. Vos ponés la pauta y lanzás.
+
+### Paquetes (precios orientativos, a confirmar)
+1. **Muestra gratis:** 2 estáticos + 1 video corto de un producto tuyo.
+2. **Pack anuncios:** 20 piezas de un producto. USD 100-150.
+3. **Todo armado (paquete principal):** análisis de la tienda + anuncios de los productos elegidos + setup de Meta + Claude conectado (opcional). Precio a definir.
+4. **Kit fecha (Cyber, Black Friday, Navidad, Hot Sale):** análisis + anuncios de 3-5 productos para la fecha. USD 200-300.
+5. **Abono mensual:** 8-12 anuncios nuevos por mes, decididos con los datos de ventas, + reporte semanal. USD 250-400/mes.
+Pendiente: definir si se muestran en USD o en pesos, o como "desde".
+
+### Confianza
+- Ejemplos reales: antes (anuncio actual de la tienda) / después (el nuestro).
+- Testimonios de tiendas (pendiente).
+- El cliente mantiene el control de su cuenta de Meta y de su pauta.
+- Nada se cambia en la tienda sin confirmación.
+- Muestra gratis con su propio producto antes de pagar.
+
+### Preguntas frecuentes
+- ¿Los anuncios se notan hechos con IA?
+- ¿Cuánto tardan?
+- ¿Los anuncios son míos? ¿Puedo usarlos donde quiera?
+- ¿Cuánto tengo que poner de pauta?
+- ¿Tengo que pagar Claude Pro? → No, es opcional.
+- ¿Qué permisos tengo que dar sobre mi tienda?
+- ¿Sirve si mi tienda no es de Tiendanube? → Sí, los anuncios y el setup de Meta sí; el análisis automático, por ahora, solo con Tiendanube.
+
+### No prometer
+- No garantizar ventas ni resultados de la pauta.
+- No prometer que el análisis detecta productos sin foto (el conector no ve las fotos).
+- No prometer datos de visitas o tráfico de la tienda.
+
+### Tono
+Español rioplatense, directo, simple, sin tecnicismos. Hablarle al dueño de tú a tú.
+
+### Estructura de la página
+1. Portada: promesa + ejemplo visual fuerte + botón "Pedí tu muestra gratis".
+2. Problema.
+3. Calidad + precio vs. agencia: ejemplos grandes + tabla comparativa.
+4. Qué incluye "Te armamos todo": los 4 bloques (análisis, anuncios, Meta, Claude).
+5. Del análisis a los anuncios.
+6. Cómo funciona: 4 pasos + "lo único que ponés vos".
+7. Paquetes.
+8. Confianza: antes/después y testimonios.
+9. Preguntas frecuentes.
+10. Cierre: muestra gratis + botón de WhatsApp.
+
+### Pendientes antes de publicar
+- Ejemplos reales de anuncios: son lo que más vende en esta página.
+- Precio de referencia de agencias o productoras de video en Argentina, para la tabla comparativa.
+- Precio del paquete "Todo armado".
+- Qué incluye exactamente el setup de Meta y si se ofrece gestión de pauta.
+- Testimonios.

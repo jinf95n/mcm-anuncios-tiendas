@@ -1,4 +1,5 @@
 import { content } from "@/config/content";
+import { CountUp } from "@/components/motion/CountUp";
 import { Container } from "@/components/ui/Container";
 import { Title } from "@/components/ui/Title";
 import { Toma } from "@/components/ui/Toma";
@@ -27,13 +28,13 @@ export function Versus() {
           <div className="bg-background p-6 md:p-10">
             <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">{versus.agency.label}</p>
             <p className="mt-4 font-mono text-[clamp(2.75rem,7vw,5rem)] leading-none tabular-nums tracking-[-0.03em] text-muted line-through decoration-1">
-              {usd(versus.agency.price)}
+              <CountUp value={versus.agency.price} prefix="USD " />
             </p>
           </div>
           <div className="bg-background p-6 md:p-10">
             <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-foreground">{versus.us.label}</p>
             <p className="mt-4 font-mono text-[clamp(2.75rem,7vw,5rem)] leading-none tabular-nums tracking-[-0.03em] text-rec">
-              {usd(versus.us.price)}
+              <CountUp value={versus.us.price} prefix="USD " />
             </p>
           </div>
         </div>

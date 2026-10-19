@@ -1,3 +1,5 @@
+import { AutoVideo } from "@/components/motion/AutoVideo";
+
 type Props = {
   src: string;
   poster: string;
@@ -6,20 +8,11 @@ type Props = {
 };
 
 // Video vertical tipo reel, como monitor de edición: marcas de encuadre y rótulo.
-// Arranca con el poster y carga diferida; la reproducción por visibilidad va en el paso 8.
+// Arranca con el poster y carga diferida; se reproduce solo mientras está a la vista.
 export function Reel({ src, poster, label, className = "" }: Props) {
   return (
     <figure className={`relative aspect-[9/16] overflow-hidden rounded-[4px] bg-surface ${className}`}>
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        src={src}
-        poster={poster}
-        muted
-        loop
-        playsInline
-        preload="none"
-        aria-hidden
-      />
+      <AutoVideo className="absolute inset-0 h-full w-full object-cover" src={src} poster={poster} />
       <FrameMarks />
       {label && (
         <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/80 to-transparent p-3 pt-10 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground">

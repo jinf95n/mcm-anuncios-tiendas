@@ -1,4 +1,6 @@
 import { content } from "@/config/content";
+import { AutoVideo } from "@/components/motion/AutoVideo";
+import { FormatsStage } from "@/components/motion/FormatsStage";
 import { Container } from "@/components/ui/Container";
 import { FrameMarks } from "@/components/ui/Reel";
 import { Title } from "@/components/ui/Title";
@@ -8,7 +10,7 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 const { formats } = content;
 
 // TOMA 03. Los "ejemplos grandes": cada formato ocupa la pantalla con su nombre y un dato.
-// Estructura estática; la inmersión con scroll (tarjeta al 40% → pantalla completa) va en el paso 8.
+// Con movimiento, FormatsStage los convierte en la inmersión con scroll (tarjeta al 40% → pantalla completa).
 export function Formats() {
   return (
     <section id="formatos" className="py-24 md:py-36">
@@ -22,28 +24,22 @@ export function Formats() {
         </div>
       </Container>
 
-      <div className="mt-14 flex flex-col gap-2 md:mt-20">
+      <FormatsStage>
         {formats.items.map((item, i) => (
-          <article key={item.name} className="relative h-[86svh] min-h-[520px] overflow-hidden bg-surface">
+          <article key={item.name} data-format className="relative h-[86svh] min-h-[520px] overflow-hidden bg-surface">
             {item.media.type === "video" ? (
-              <video
-                className="absolute inset-0 h-full w-full object-cover"
-                src={item.media.src}
-                poster={item.media.poster}
-                muted
-                loop
-                playsInline
-                preload="none"
-                aria-hidden
-              />
+              <div data-format-media className="absolute inset-0">
+                <AutoVideo className="h-full w-full object-cover" src={item.media.src} poster={item.media.poster} />
+              </div>
             ) : (
               // eslint-disable-next-line @next/next/no-img-element
-              <img className="absolute inset-0 h-full w-full object-cover" src={item.media.src} alt="" loading="lazy" />
+              <img data-format-media className="absolute inset-0 h-full w-full object-cover" src={item.media.src} alt="" loading="lazy" />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
             <FrameMarks inset="inset-5 md:inset-8" />
 
             <Container className="relative flex h-full flex-col justify-end pb-12 md:pb-16">
+              <div data-format-text>
               <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">
                 Formato {String(i + 1).padStart(2, "0")} / {String(formats.items.length).padStart(2, "0")}
               </p>
@@ -56,10 +52,11 @@ export function Formats() {
                   {item.stat}
                 </p>
               </div>
+              </div>
             </Container>
           </article>
         ))}
-      </div>
+      </FormatsStage>
 
       <Container className="mt-12">
         <WhatsAppButton message={formats.message} variant="ghost">

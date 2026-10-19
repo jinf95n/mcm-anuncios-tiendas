@@ -111,7 +111,7 @@ Se toman efectos y experiencia de scroll, no la estética (la estética es la de
 
 **Adaptación (aprobada)**
 - Se toma solo el efecto de scroll, sin la medusa ni las estrellas. La sección queda fija. La ficha de producto (foto, "quieto · 80 en stock") se desarma: las letras y los números vuelan con SplitText y la foto se recorta y escala hasta el formato 9:16. Todo se rearma como el anuncio de liquidación.
-- Cierra con el stock bajando con animación de conteo (80 → 12).
+- El conteo muestra el dato de la tienda, no un resultado: "80 en stock · 47 días sin venderse" (el 47 cuenta hacia arriba), y de ahí se transforma en el anuncio. (Reemplaza al conteo 80 → 12, que podía leerse como promesa de ventas.)
 
 ### 3. https://virtuallyeverafter.xyz/ → galería de anuncios
 **Mecánica**
@@ -149,7 +149,7 @@ Cada sección lleva su claqueta "TOMA 0X". Tres secciones fijas (03, 06 y 09), s
 | 03 | Formatos | Los "ejemplos grandes" de calidad: foto de estudio, estático, comercial, UGC, cada uno con nombre y dato ("listo en días", "20 versiones"). | Fija, inmersión: cada formato crece del 40% a pantalla completa. | "Quiero ver formatos para mi tienda" |
 | 04 | Agencia vs. nosotros | Tabla (agencia desde USD 2.850 vs. nosotros desde USD 150; nota "Referencia: tarifario.info, sept. 2026") + calculadora + "por qué es más barato sin ser peor". | Números con conteo en rojo REC. | "Calculé {n} piezas, quiero mi presupuesto" |
 | 05 | Qué incluye | Análisis, anuncios, setup de Meta y Claude opcional (solo para Tiendanube). | Fundidos. | — |
-| 06 | Del análisis a los anuncios | La ficha "quieto · 80 en stock" se transforma en el anuncio de liquidación. | Fija: la ficha se desarma y se rearma como anuncio; cierra con conteo 80 → 12. | "Quiero que analicen mi tienda" |
+| 06 | Del análisis a los anuncios | La ficha "quieto · 80 en stock" se transforma en el anuncio de liquidación. | Fija: conteo del dato ("80 en stock · 47 días sin venderse", el 47 cuenta hacia arriba); la ficha se desarma y se rearma como anuncio. | "Quiero que analicen mi tienda" |
 | 07 | Antes/después | Foto original vs. anuncio terminado. | Slider arrastrable. | — |
 | 08 | Cómo funciona | 4 pasos + "lo único que ponés vos": la pauta y, opcional, Claude Pro. | Fundidos / cortes. | "Quiero arrancar" |
 | 09 | Galería de anuncios | Videos verticales tipo reel como protagonistas. | Fija, pasillo en CSS 3D; swipe en celular; grilla estática con reduced-motion. | "Quiero anuncios así" |

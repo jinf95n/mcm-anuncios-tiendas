@@ -7,7 +7,7 @@
 - [x] 5. Contexto de impeccable
 - [x] 6. Estructura
 - [x] 7. Construcción
-- [ ] 8. Animaciones
+- [x] 8. Animaciones
 - [ ] 9. Funcionalidades
 - [ ] 10. Revisión visual
 - [ ] 11. Textos finales y SEO

@@ -1,9 +1,38 @@
+"use client";
+
+import { useRef } from "react";
 import { site } from "@/config/site";
+import { gsap, useGSAP } from "@/lib/gsap";
 
 // Claqueta de cada sección: "TOMA 0X", nombre de la escena y producción.
+// Entra con un corte cuadro a cuadro (steps), sin deslizamientos ni rebotes.
 export function Toma({ n, label }: { n: string; label: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.fromTo(
+          ref.current,
+          { clipPath: "inset(0 100% 0 0)" },
+          {
+            clipPath: "inset(0 0% 0 0)",
+            duration: 0.5,
+            ease: "steps(6)",
+            scrollTrigger: { trigger: ref.current, start: "top 88%", once: true },
+          },
+        );
+      });
+    },
+    { scope: ref },
+  );
+
   return (
-    <div className="flex items-stretch border-y border-line font-mono text-[11px] uppercase tracking-[0.14em] text-muted md:text-xs">
+    <div
+      ref={ref}
+      className="flex items-stretch border-y border-line font-mono text-[11px] uppercase tracking-[0.14em] text-muted md:text-xs"
+    >
       <span className="flex shrink-0 items-center gap-2 whitespace-nowrap border-r border-line py-2 pr-4 text-foreground">
         <span className="h-1.5 w-1.5 bg-rec" aria-hidden />
         Toma {n}

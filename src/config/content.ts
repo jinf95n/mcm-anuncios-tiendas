@@ -151,14 +151,13 @@ export const content = {
   analysis: {
     toma: { n: "06", label: "Del análisis a los anuncios" },
     title: ["Un *dato* de tu tienda.", "Un anuncio que lo resuelve."],
-    sample: "Ejemplo ilustrativo",
     product: {
       name: "Buzo oversize gris",
       image: media("analisis-producto.jpg"),
       status: "Quieto",
       data: [
         { label: "Stock", value: "80" },
-        { label: "Ventas 30 días", value: "2" },
+        { label: "Días sin venderse", value: "47" },
         { label: "Precio", value: "$ 38.900" },
       ],
     },
@@ -168,7 +167,8 @@ export const content = {
       offer: "-30%",
       cta: "Comprar ahora",
     },
-    stock: { from: 80, to: 12, label: "en stock" },
+    // El dato de la tienda, no un resultado: el 47 cuenta hacia arriba (paso 8).
+    signal: { stock: 80, stockLabel: "en stock", days: 47, daysLabel: "días sin venderse" },
     // Tabla del brief: qué sale del análisis y qué anuncio le corresponde.
     map: [
       { data: "Más vendidos", ad: "UGC / recomendación" },

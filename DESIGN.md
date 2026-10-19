@@ -6,7 +6,7 @@
 ## Referencias
 Detalle de la mecánica y las adaptaciones aprobadas en `BRIEF.md` → "Referencias". Se toman efectos de scroll, no la estética.
 - https://studiomirage.io/ → sección Formatos: cada formato crece con el scroll hasta llenar la pantalla, con nombre y dato encima.
-- https://www.junkbranding.com/ → "Del análisis a los anuncios": el dato de la tienda se desarma y se rearma como el anuncio; conteo de stock 80 → 12.
+- https://www.junkbranding.com/ → "Del análisis a los anuncios": el dato de la tienda se desarma y se rearma como el anuncio; conteo del dato "80 en stock · 47 días sin venderse".
 - https://virtuallyeverafter.xyz/ → galería de anuncios: pasillo de reels en CSS 3D que se recorre con el scroll; swipe en celular; grilla estática con reduced-motion.
 
 ## Colores
@@ -51,7 +51,7 @@ Lenguaje de edición: cortes secos, fundidos y escalas. Easing suave (`power2`/`
   - Timecode: avanza con el progreso del scroll de toda la página.
   - Claquetas "TOMA 0X": corte seco al entrar en la sección.
   - Formatos: sección fija; cada formato escala de tarjeta al 40% a pantalla completa (bordes redondeados → rectos); nombre y dato entran con fundido al llegar.
-  - Del análisis a los anuncios: sección fija; la ficha de producto se desarma (SplitText) y la foto se recorta/escala a 9:16 hasta formar el anuncio; cierra con conteo de stock 80 → 12.
+  - Del análisis a los anuncios: sección fija; la ficha de producto se desarma (SplitText) y la foto se recorta/escala a 9:16 hasta formar el anuncio; antes, el dato cuenta: "80 en stock · 47 días sin venderse" (el 47 cuenta hacia arriba).
   - Galería: pasillo en CSS 3D; la cámara avanza con el scroll; solo se reproduce el reel cercano.
   - Números clave (USD 2.850 vs. USD 150, días vs. semanas): conteo o corte, en rojo REC.
   - Bloques de texto: fundido + subida corta.

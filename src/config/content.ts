@@ -84,36 +84,37 @@ export const content = {
   versus: {
     toma: { n: "04", label: "Agencia vs. nosotros" },
     title: ["Lo que cobra una agencia.", "Lo que cobramos *nosotros.*"],
-    agency: { label: "Agencia / productora", price: 2850 },
+    agency: { label: "Agencia / productora", price: 2350 },
     us: { label: "Take One", price: 150 },
-    priceNote: "20 piezas + setup de Meta, desde.",
+    priceNote: "20 piezas, desde. Solo piezas: el setup de Meta va aparte.",
     rows: [
-      { label: "Precio", agency: "Desde USD 2.850", us: "Desde USD 150 por 20 piezas" },
+      { label: "Precio de 20 piezas", agency: "Desde USD 2.350", us: "Desde USD 150" },
       { label: "Rodaje, modelos, locación", agency: "Sí, y se paga", us: "No hace falta" },
       { label: "Tiempo de entrega", agency: "Semanas", us: "Días" },
       { label: "Versiones para probar", agency: "Pocas, cada cambio cuesta", us: "Muchas versiones del mismo producto" },
       { label: "Qué producto se anuncia", agency: "Lo que decidís vos", us: "Lo que conviene según los datos de tu tienda" },
-      { label: "Meta configurado", agency: "Aparte", us: "Incluido" },
+      { label: "Meta configurado", agency: "Aparte, desde USD 500", us: "Incluido en Todo armado" },
     ],
     footnote: "Referencia: tarifario.info, sept. 2026.",
     why: {
       title: "Por qué es más barato sin ser peor",
       text: "Sin rodaje, sin modelos, sin locación y sin equipo de filmación. Tu producto real, en escenas con calidad de comercial.",
     },
-    // Fórmula de relleno (BRIEF.md). La lógica interactiva va en el paso 9.
+    // Fórmula de relleno (BRIEF.md), solo piezas: agencia = fotos × 35 + videos × 200;
+    // nosotros = máx(150, piezas × 7,5). Mínimo 1 pieza en total.
     calculator: {
       title: "Calculá tu pedido",
       photos: { label: "Fotos", initial: 10, agencyUnit: 35 },
       videos: { label: "Videos", initial: 10, agencyUnit: 200 },
-      agencySetup: 500,
+      max: 100,
       usUnit: 7.5,
       usMin: 150,
       agencyLabel: "Agencia",
       usLabel: "Nosotros",
     },
     cta: "Quiero mi presupuesto",
-    // {n} se reemplaza por la cantidad de piezas de la calculadora (paso 9).
-    message: "Hola! Calculé {n} piezas y quiero mi presupuesto.",
+    // {piezas}, {fotos} y {videos} salen de la calculadora, con su plural ("1 foto", "10 fotos").
+    message: "Hola! Calculé {piezas} ({fotos} y {videos}) y quiero mi presupuesto.",
   },
 
   includes: {

@@ -1,21 +1,13 @@
 import { content } from "@/config/content";
 import { CountUp } from "@/components/motion/CountUp";
+import { Calculator } from "@/components/ui/Calculator";
 import { Container } from "@/components/ui/Container";
 import { Title } from "@/components/ui/Title";
 import { Toma } from "@/components/ui/Toma";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 const { versus } = content;
-const { calculator: calc } = versus;
-
-const usd = (n: number) => `USD ${n.toLocaleString("es-AR")}`;
-
-// Valores iniciales con la fórmula de relleno (coinciden con la tabla: 2.850 vs. 150).
-const initialAgency = calc.photos.initial * calc.photos.agencyUnit + calc.videos.initial * calc.videos.agencyUnit + calc.agencySetup;
-const initialUs = Math.max(calc.usMin, (calc.photos.initial + calc.videos.initial) * calc.usUnit);
 
 // TOMA 04. Tabla + calculadora + "por qué es más barato sin ser peor".
-// La calculadora solo es visual: los +/- y el recálculo van en el paso 9.
 export function Versus() {
   return (
     <section id="precio" className="py-24 md:py-36">
@@ -68,43 +60,9 @@ export function Versus() {
             <p className="mt-4 border-t border-line pt-4 text-[13px] text-muted">{versus.footnote}</p>
           </div>
 
-          {/* Calculadora (visual) */}
+          {/* Calculadora */}
           <div className="lg:col-span-4 lg:col-start-9">
-            <div className="rounded-[6px] border border-line bg-surface p-6">
-              <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">{calc.title}</p>
-              <div className="mt-5 grid grid-cols-2 gap-3">
-                {[calc.photos, calc.videos].map((field) => (
-                  <div key={field.label} className="border border-line p-3">
-                    <p className="text-[13px] text-muted">{field.label}</p>
-                    <div className="mt-2 flex items-center justify-between">
-                      <button type="button" className="h-8 w-8 border border-line text-[18px] leading-none" aria-label={`Menos ${field.label.toLowerCase()}`}>
-                        −
-                      </button>
-                      <span className="font-mono text-[22px] tabular-nums">{field.initial}</span>
-                      <button type="button" className="h-8 w-8 border border-line text-[18px] leading-none" aria-label={`Más ${field.label.toLowerCase()}`}>
-                        +
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <dl className="mt-6 space-y-3 border-t border-line pt-5">
-                <div className="flex items-baseline justify-between">
-                  <dt className="text-muted">{calc.agencyLabel}</dt>
-                  <dd className="font-mono text-[20px] tabular-nums text-muted line-through decoration-1">{usd(initialAgency)}</dd>
-                </div>
-                <div className="flex items-baseline justify-between">
-                  <dt>{calc.usLabel}</dt>
-                  <dd className="font-mono text-[28px] tabular-nums text-rec">{usd(initialUs)}</dd>
-                </div>
-              </dl>
-              <WhatsAppButton
-                message={versus.message.replace("{n}", String(calc.photos.initial + calc.videos.initial))}
-                className="mt-6 w-full"
-              >
-                {versus.cta}
-              </WhatsAppButton>
-            </div>
+            <Calculator />
           </div>
         </div>
 

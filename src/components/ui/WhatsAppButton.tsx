@@ -7,6 +7,7 @@ type Props = {
   variant?: "primary" | "ghost";
   size?: "md" | "lg";
   className?: string;
+  onClick?: () => void;
 };
 
 const variants = {
@@ -21,13 +22,14 @@ const sizes = {
 
 // Único CTA del sitio: abre WhatsApp con el mensaje de la sección.
 // data-wa queda como gancho para el evento "Contact" del Pixel (paso 9).
-export function WhatsAppButton({ message, children, variant = "primary", size = "md", className = "" }: Props) {
+export function WhatsAppButton({ message, children, variant = "primary", size = "md", className = "", onClick }: Props) {
   return (
     <a
       href={whatsappUrl(message)}
       target="_blank"
       rel="noopener noreferrer"
       data-wa
+      onClick={onClick}
       className={`inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-[5px] font-semibold tracking-[-0.01em] transition-colors duration-150 ${variants[variant]} ${sizes[size]} ${className}`}
     >
       <span className="rec-dot" aria-hidden />

@@ -53,7 +53,7 @@ Lenguaje de edición: cortes secos, fundidos y escalas. Easing suave (`power2`/`
   - Formatos: sección fija; cada formato escala de tarjeta al 40% a pantalla completa (bordes redondeados → rectos); nombre y dato entran con fundido al llegar.
   - Del análisis a los anuncios: sección fija; la ficha de producto se desarma (SplitText) y la foto se recorta/escala a 9:16 hasta formar el anuncio; antes, el dato cuenta: "80 en stock · 47 días sin venderse" (el 47 cuenta hacia arriba).
   - Galería: pasillo en CSS 3D; la cámara avanza con el scroll; solo se reproduce el reel cercano.
-  - Números clave (USD 2.850 vs. USD 150, días vs. semanas): conteo o corte, en rojo REC.
+  - Números clave (USD 2.350 vs. USD 150, días vs. semanas): conteo o corte, en rojo REC.
   - Bloques de texto: fundido + subida corta.
 - Reglas de las secciones fijas: máximo ~2 pantallas de recorrido cada una. El botón de WhatsApp queda siempre visible. Si una sección se hace larga, se recorta el efecto, no el CTA.
 - Hover / interacciones: botones con cambio de fondo rápido (150–200 ms); videos que se reproducen al pasar o tocar; slider antes/después arrastrable sin inercia.

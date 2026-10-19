@@ -36,9 +36,11 @@
 - Input "Pegá el link de tu tienda": abre WhatsApp con el link en el mensaje. No se guarda nada.
 - Slider de antes/después arrastrable. Imágenes en `/public/media/`.
 - Calculadora: cantidad de fotos y videos → precio de agencia vs. el nuestro. Valores de relleno en `content.ts`, coherentes con la tabla comparativa:
-  - Agencia = fotos × USD 35 + videos × USD 200 + USD 500 (setup de Meta).
+  - Solo piezas (comparación honesta: el Pack 20 no trae setup de Meta).
+  - Agencia = fotos × USD 35 + videos × USD 200.
   - Nosotros = máx(USD 150, piezas × USD 7,5).
-  - Valor inicial: 10 fotos + 10 videos → USD 2.850 vs. USD 150 (igual que la tabla).
+  - Valor inicial: 10 fotos + 10 videos → USD 2.350 vs. USD 150 (igual que la tabla).
+  - Mínimo total de 1 pieza: si fotos + videos = 1, se desactiva el "−" que dejaría el total en 0.
 - Botón de WhatsApp fijo en celular.
 - Meta Pixel con evento "Contact" al tocar WhatsApp. [PENDIENTE: ID del Pixel]
 
@@ -71,7 +73,7 @@
 - Todos los textos, precios, rutas de medios y el número de WhatsApp van en un solo archivo `content.ts`. (Decisión posterior: el WhatsApp vive en `site.ts` y `content.ts` lo toma de ahí, sin repetirlo.)
 - Medios en `/public/media/` con nombres fijos (hero-1.mp4, antes-1.jpg, etc.). Se reemplazan después sin tocar componentes.
 - Precios de relleno: Muestra gratis | Pack 20 piezas desde USD 150 | Todo armado desde USD 490 | Kit fecha desde USD 260 | Abono desde USD 320/mes.
-- Tabla comparativa: Agencia desde USD 2.850 (20 piezas + setup de Meta) vs. nosotros desde USD 150. Nota al pie: "Referencia: tarifario.info, sept. 2026".
+- Tabla comparativa: Agencia desde USD 2.850 (20 piezas + setup de Meta) vs. nosotros desde USD 150. Nota al pie: "Referencia: tarifario.info, sept. 2026". (Corregido en el paso 9: la comparación es solo de piezas. Precio de 20 piezas: desde USD 2.350 vs. desde USD 150. Meta: "Aparte, desde USD 500" vs. "Incluido en Todo armado".)
 
 ### Ideas a incluir
 
@@ -132,7 +134,7 @@ Se toman efectos y experiencia de scroll, no la estética (la estética es la de
 ### Criterios y reglas
 - Los videos son los protagonistas; el efecto está para mostrarlos, no para lucirse.
 - Cada efecto tiene que dejar claro qué se ofrece. Si no ayuda a entender, se saca.
-- Los números (USD 2.850 vs. USD 150, días vs. semanas) tienen que pegar: aparecen con animación de conteo o de corte.
+- Los números (USD 2.350 vs. USD 150, días vs. semanas) tienen que pegar: aparecen con animación de conteo o de corte.
 - Celular primero: si un efecto no anda bien en mobile, tiene versión simple.
 - Scroll siempre nativo (Lenis + ScrollTrigger). Nada de secuestrar la rueda ni de saltos de a una pantalla.
 - Cada sección fija dura poco scroll: máximo ~2 pantallas de recorrido.
@@ -147,7 +149,7 @@ Cada sección lleva su claqueta "TOMA 0X". Tres secciones fijas (03, 06 y 09), s
 | 01 | Portada | Titular "Te armamos todo", CTA de muestra gratis e input "Pegá el link de tu tienda". | Muro de reels en loop que entra con cortes secos. | "Quiero mi muestra" / "Esta es mi tienda: {link}" |
 | 02 | Problema | Corto. | Sin sección fija; fundidos. | — |
 | 03 | Formatos | Los "ejemplos grandes" de calidad: foto de estudio, estático, comercial, UGC, cada uno con nombre y dato ("listo en días", "20 versiones"). | Fija, inmersión: cada formato crece del 40% a pantalla completa. | "Quiero ver formatos para mi tienda" |
-| 04 | Agencia vs. nosotros | Tabla (agencia desde USD 2.850 vs. nosotros desde USD 150; nota "Referencia: tarifario.info, sept. 2026") + calculadora + "por qué es más barato sin ser peor". | Números con conteo en rojo REC. | "Calculé {n} piezas, quiero mi presupuesto" |
+| 04 | Agencia vs. nosotros | Tabla (20 piezas: agencia desde USD 2.350 vs. nosotros desde USD 150; Meta: aparte, desde USD 500 vs. incluido en Todo armado; nota "Referencia: tarifario.info, sept. 2026") + calculadora + "por qué es más barato sin ser peor". | Números con conteo en rojo REC. | "Calculé {n} piezas, quiero mi presupuesto" |
 | 05 | Qué incluye | Análisis, anuncios, setup de Meta y Claude opcional (solo para Tiendanube). | Fundidos. | — |
 | 06 | Del análisis a los anuncios | La ficha "quieto · 80 en stock" se transforma en el anuncio de liquidación. | Fija: conteo del dato ("80 en stock · 47 días sin venderse", el 47 cuenta hacia arriba); la ficha se desarma y se rearma como anuncio. | "Quiero que analicen mi tienda" |
 | 07 | Antes/después | Foto original vs. anuncio terminado. | Slider arrastrable. | — |

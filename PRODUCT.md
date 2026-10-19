@@ -15,7 +15,7 @@ Dueños de tiendas online que manejan todo solos, sin agencia. Foco en Tiendanub
 Take One (by MCM Digital) es un servicio de anuncios hechos con IA + setup de Meta para tiendas online. El sitio es una one page sin blog cuyo único objetivo es que el visitante pida su muestra gratis por WhatsApp. Frase de venta: "Te armamos todo".
 
 ## Positioning
-Calidad de comercial de agencia por una fracción del precio, decidido con los datos de la tienda. Comparativa de relleno: agencia desde USD 2.850 (20 piezas + setup de Meta) vs. Take One desde USD 150 (referencia: tarifario.info, sept. 2026).
+Calidad de comercial de agencia por una fracción del precio, decidido con los datos de la tienda. Comparativa de relleno, solo piezas: 20 piezas de agencia desde USD 2.350 vs. Take One desde USD 150; el setup de Meta va aparte en la agencia (desde USD 500) e incluido en Todo armado (referencia: tarifario.info, sept. 2026).
 
 ## Operating Context
 - El visitante llega desde Instagram, en el celular, y decide rápido.
@@ -25,7 +25,7 @@ Calidad de comercial de agencia por una fracción del precio, decidido con los d
 ## Capabilities and Constraints
 - Servicios (precios de relleno): Muestra gratis | Pack 20 piezas desde USD 150 | Todo armado desde USD 490 | Kit fecha desde USD 260 | Abono desde USD 320/mes.
 - Formatos: foto de estudio, estático, comercial, UGC.
-- Calculadora (relleno): agencia = fotos × USD 35 + videos × USD 200 + USD 500 (setup de Meta); Take One = máx(USD 150, piezas × USD 7,5). Inicial: 10 fotos + 10 videos → USD 2.850 vs. USD 150.
+- Calculadora (relleno): solo piezas. Agencia = fotos × USD 35 + videos × USD 200; Take One = máx(USD 150, piezas × USD 7,5). Inicial: 10 fotos + 10 videos → USD 2.350 vs. USD 150. Mínimo 1 pieza en total.
 - Única conversión: WhatsApp. Botón de WhatsApp siempre visible. Meta Pixel con evento "Contact" al tocar WhatsApp.
 - Datos de identidad en `src/config/site.ts`; textos, precios y rutas de medios en `content.ts` (toma el WhatsApp de `site.ts`). Medios en `/public/media/` con nombres fijos, reemplazables sin tocar componentes.
 - Stack: Next.js (App Router) + TypeScript + Tailwind, GSAP + ScrollTrigger + Lenis, deploy en Cloudflare Workers. Scroll siempre nativo.

@@ -1,7 +1,7 @@
 # Progreso — Take One (by MCM Digital)
 
 - [x] 1. Preparar el proyecto
-- [ ] 2. Brief
+- [x] 2. Brief
 - [ ] 3. Referencias
 - [ ] 4. DESIGN.md
 - [ ] 5. Contexto de impeccable

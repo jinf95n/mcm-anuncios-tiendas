@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   // IMPORTANTE: cambiar por el slug del cliente antes del primer deploy
   // (si no, pisa el deploy de otro proyecto).
-  "name": "base-landing24",
+  "name": "take-one",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],

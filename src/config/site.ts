@@ -1,16 +1,17 @@
 // Datos del cliente. Todo el sitio lee de acá: nunca hardcodear estos datos en componentes.
 
 export const site = {
-  name: "Nombre del cliente",
+  name: "Take One",
+  author: "MCM Digital",
   description: "Descripción corta para Google (máx. 160 caracteres).",
   url: "https://www.dominio-del-cliente.com.ar",
   locale: "es_AR",
   ogImage: "/og.jpg", // 1200x630 en /public
 
   contact: {
-    whatsapp: "5492640000000", // formato internacional, sin + ni espacios
-    whatsappMessage: "Hola! Quería hacer una consulta.",
-    phone: "+54 264 000-0000",
+    whatsapp: "5492645581677", // formato internacional, sin + ni espacios
+    whatsappMessage: "Hola! Quiero consultar por Take One.",
+    phone: "+54 264 558-1677",
     email: "contacto@dominio-del-cliente.com.ar",
   },
 

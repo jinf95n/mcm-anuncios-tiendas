@@ -6,7 +6,7 @@
 - [x] 4. DESIGN.md
 - [x] 5. Contexto de impeccable
 - [x] 6. Estructura
-- [ ] 7. Construcción
+- [x] 7. Construcción
 - [ ] 8. Animaciones
 - [ ] 9. Funcionalidades
 - [ ] 10. Revisión visual

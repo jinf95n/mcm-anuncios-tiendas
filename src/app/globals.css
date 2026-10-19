@@ -30,6 +30,51 @@ body {
   color: var(--foreground);
 }
 
+/* Superficies del navegador con la paleta de la sala de edición. */
+::selection {
+  background: var(--rec);
+  color: var(--background);
+}
+
+:focus-visible {
+  outline: 2px solid var(--rec);
+  outline-offset: 3px;
+}
+
+html {
+  scrollbar-color: var(--line) var(--background);
+}
+
+/* Grano de película: capa fija sobre todo el sitio, sin interferir con los clics. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* Punto REC titilando (quieto con reduced-motion, por la regla de abajo). */
+@keyframes rec-blink {
+  0%, 55% { opacity: 1; }
+  56%, 100% { opacity: 0.15; }
+}
+
+.rec-dot {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 9999px;
+  background: var(--rec);
+  animation: rec-blink 1.4s steps(1, end) infinite;
+}
+
+.btn-primary .rec-dot {
+  background: var(--background);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -37,5 +82,9 @@ body {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .rec-dot {
+    animation: none;
   }
 }

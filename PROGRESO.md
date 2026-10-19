@@ -4,7 +4,7 @@
 - [x] 2. Brief
 - [x] 3. Referencias
 - [x] 4. DESIGN.md
-- [ ] 5. Contexto de impeccable
+- [x] 5. Contexto de impeccable
 - [ ] 6. Estructura
 - [ ] 7. Construcción
 - [ ] 8. Animaciones

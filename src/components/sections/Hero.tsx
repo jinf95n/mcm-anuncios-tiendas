@@ -2,6 +2,7 @@ import { content } from "@/config/content";
 import { HeroIntro } from "@/components/motion/HeroIntro";
 import { Container } from "@/components/ui/Container";
 import { Reel } from "@/components/ui/Reel";
+import { StoreLinkForm } from "@/components/ui/StoreLinkForm";
 import { Title } from "@/components/ui/Title";
 import { Toma } from "@/components/ui/Toma";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
@@ -9,7 +10,6 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 const { hero } = content;
 
 // TOMA 01. Muro de reels en loop + promesa + CTA + input "Pegá el link de tu tienda".
-// El input solo es visual: armar el mensaje con el link va en el paso 9.
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-14 md:pt-16">
@@ -30,27 +30,7 @@ export function Hero() {
             <p className="font-mono text-[12px] uppercase tracking-[0.12em] text-muted">{hero.note}</p>
           </div>
 
-          <form data-hero-fade className="mt-10 max-w-[460px]" action="#" aria-label={hero.storeInput.label}>
-            <label htmlFor="store-link" className="font-mono text-[12px] uppercase tracking-[0.12em] text-muted">
-              {hero.storeInput.label}
-            </label>
-            <div className="mt-2 flex border border-line focus-within:border-foreground">
-              <input
-                id="store-link"
-                name="store"
-                type="url"
-                inputMode="url"
-                placeholder={hero.storeInput.placeholder}
-                className="min-w-0 flex-1 bg-transparent px-4 py-3 text-[16px] text-foreground placeholder:text-foreground/40 focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="shrink-0 border-l border-line px-4 text-[14px] font-semibold text-foreground transition-colors duration-150 hover:bg-foreground hover:text-background"
-              >
-                {hero.storeInput.button}
-              </button>
-            </div>
-          </form>
+          <StoreLinkForm {...hero.storeInput} />
         </div>
 
         {/* Muro de reels: columnas desfasadas, como una hoja de contactos de video. */}

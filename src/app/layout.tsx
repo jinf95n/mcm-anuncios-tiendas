@@ -3,6 +3,7 @@ import { Instrument_Serif, Inter_Tight, JetBrains_Mono } from "next/font/google"
 import { site } from "@/config/site";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { MetaPixel } from "@/components/seo/MetaPixel";
 import "./globals.css";
 
 // Tipografías según DESIGN.md, expuestas como variables CSS en <html>.
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="font-sans">
         <JsonLd />
+        <MetaPixel />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

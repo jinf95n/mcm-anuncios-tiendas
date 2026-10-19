@@ -24,8 +24,9 @@ export const content = {
       label: "Pegá el link de tu tienda",
       placeholder: "tutienda.mitiendanube.com",
       button: "Enviar por WhatsApp",
-      // {link} se reemplaza por lo que pegue el visitante (paso 9).
-      message: "Hola! Quiero mi muestra gratis. Esta es mi tienda: {link}",
+      // Sin link: mensaje base. Con link: {link} se reemplaza por lo que pegue el visitante.
+      emptyMessage: "Hola, quiero mi muestra gratis",
+      message: "Hola, quiero mi muestra gratis. Esta es mi tienda: {link}",
     },
     note: "Gratis, con un producto tuyo. Sin compromiso.",
     reels: ["hero-1", "hero-2", "hero-3", "hero-4", "hero-5", "hero-6"].map(video),

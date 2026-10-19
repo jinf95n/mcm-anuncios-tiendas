@@ -2,20 +2,20 @@
 
 ## Cliente
 - Quién es: Take One, servicio de MCM Digital. Frase de venta: "Te armamos todo".
-- Rubro: armado de anuncios para tiendas online (piezas, setup de Meta, kits para fechas de venta, abono mensual). [PENDIENTE: confirmar descripción]
-- Ciudad / alcance: [PENDIENTE]
-- Qué lo diferencia de su competencia: precio frente a una agencia (desde USD 150 vs. agencia desde USD 2.850 por 20 piezas + setup de Meta); arranca con muestra gratis; trabaja a partir del análisis de la tienda ("del análisis a los anuncios"), con reporte semanal. [PENDIENTE: confirmar]
+- Rubro: servicio de anuncios hechos con IA + setup de Meta para tiendas online.
+- Alcance: one page, sin blog.
+- Qué lo diferencia de su competencia: calidad de comercial de agencia por una fracción del precio, decidido con los datos de la tienda.
 
 ## Público
-- A quién le habla el sitio: dueños de tiendas online. Llegan mayormente desde Instagram, en celular. [PENDIENTE: confirmar perfil (tamaño de tienda, plataforma)]
-- Qué busca esa persona cuando llega: [PENDIENTE]
+- A quién le habla el sitio: dueños de tiendas online que manejan todo solos, sin agencia. Foco en Tiendanube. Llegan mayormente desde Instagram, en celular.
+- Qué busca esa persona cuando llega: pedir su muestra gratis por WhatsApp.
 
 ## Objetivo del sitio
-- Acción principal: escribir por WhatsApp con mensaje precargado, distinto según la sección.
-- Acciones secundarias: pegar el link de la tienda para mandarlo por WhatsApp. [PENDIENTE: ¿hay otras?]
+- Acción principal (única conversión): pedir la muestra gratis por WhatsApp, con mensaje precargado distinto según la sección.
+- Acciones secundarias: ninguna aparte de WhatsApp. El input "Pegá el link de tu tienda" es otra entrada a la misma conversión.
 
 ## Secciones
-<!-- Surgen de "Ideas a incluir". El orden y la estructura final se definen en el paso 6. -->
+<!-- 10 secciones. El orden y la estructura final se definen en el paso 6. -->
 1. Portada: muro de videos verticales en loop, estilo reels.
 2. Input "Pegá el link de tu tienda".
 3. Antes/después (slider arrastrable).
@@ -23,30 +23,34 @@
 5. Servicios y precios (Muestra gratis, Pack 20 piezas, Todo armado, Kit fecha, Abono).
 6. Comparativa agencia vs. nosotros + calculadora.
 7. Reporte semanal (chat simulado, chico y sin protagonismo).
-8. [PENDIENTE: ¿FAQ, testimonios, cierre?]
+8. Testimonios (relleno).
+9. FAQ.
+10. Cierre.
 
 ## Funcionalidades
 <!-- Una por línea: qué hace, qué datos usa, dónde se guardan -->
 - Botones de WhatsApp: abren WhatsApp con un mensaje distinto por sección. Número desde `site.ts`, mensajes en `content.ts`. No se guarda nada.
 - Input "Pegá el link de tu tienda": abre WhatsApp con el link en el mensaje. No se guarda nada.
 - Slider de antes/después arrastrable. Imágenes en `/public/media/`.
-- Calculadora: cantidad de piezas → precio de agencia vs. el nuestro. Valores en `content.ts`. [PENDIENTE: fórmula/precio por pieza]
+- Calculadora: cantidad de fotos y videos → precio de agencia vs. el nuestro. Valores de relleno en `content.ts`:
+  - Agencia = fotos × USD 55 + videos × USD 300.
+  - Nosotros = (fotos + videos) × USD 7,5, con un mínimo de USD 150.
 - Botón de WhatsApp fijo en celular.
 - Meta Pixel con evento "Contact" al tocar WhatsApp. [PENDIENTE: ID del Pixel]
 
 ## Tono de los textos
-- Voseo. [PENDIENTE: tono (ej. directo y cancherito vs. sobrio)]
+- Rioplatense con voseo, directo, simple, sin tecnicismos, de igual a igual con el dueño.
 
 ## Contenido disponible
-- Logo: [PENDIENTE]
-- Fotos propias: [PENDIENTE] Videos verticales para la portada y antes/después: de relleno por ahora, en `/public/media/`.
-- Textos que ya tiene: [PENDIENTE] Por ahora, borradores en `content.ts`.
-- Testimonios / casos / prensa: [PENDIENTE]
+- Logo: wordmark tipográfico, se define en el paso 4.
+- Fotos y videos: de relleno por ahora, en `/public/media/` (videos verticales para la portada, imágenes de antes/después).
+- Textos que ya tiene: ninguno. Borradores en `content.ts`.
+- Testimonios / casos / prensa: de relleno.
 
 ## Datos de contacto
 - WhatsApp: +54 264 558-1677
 - Email: [PENDIENTE]
-- Dirección: [PENDIENTE: ¿se muestra?]
+- Dirección: no aplica (one page, servicio online).
 - Redes: [PENDIENTE: Instagram]
 - Dominio: [PENDIENTE: tiendas.mcmdigital.com.ar o raíz]
 

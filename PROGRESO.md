@@ -3,7 +3,7 @@
 - [x] 1. Preparar el proyecto
 - [x] 2. Brief
 - [x] 3. Referencias
-- [ ] 4. DESIGN.md
+- [x] 4. DESIGN.md
 - [ ] 5. Contexto de impeccable
 - [ ] 6. Estructura
 - [ ] 7. Construcción

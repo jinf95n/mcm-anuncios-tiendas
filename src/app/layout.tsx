@@ -1,11 +1,27 @@
 import type { Metadata } from "next";
+import { Instrument_Serif, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import { site } from "@/config/site";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { JsonLd } from "@/components/seo/JsonLd";
 import "./globals.css";
 
-// Tipografías: se definen por cliente según DESIGN.md con next/font
-// (Google o local) y se exponen como variables CSS en <html>.
+// Tipografías según DESIGN.md, expuestas como variables CSS en <html>.
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+});
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  variable: "--font-inter-tight",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -26,8 +42,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es-AR" className="antialiased">
-      <body>
+    <html
+      lang="es-AR"
+      className={`${instrumentSerif.variable} ${interTight.variable} ${jetbrainsMono.variable} antialiased`}
+    >
+      <body className="font-sans">
         <JsonLd />
         <SmoothScroll>{children}</SmoothScroll>
       </body>

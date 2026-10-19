@@ -3,13 +3,26 @@
 
 /* Tokens de diseño: se reemplazan por cliente según DESIGN.md. */
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
+  --background: #0e0d0b;
+  --surface: #1a1815;
+  --foreground: #f2ede4;
+  --muted: rgb(242 237 228 / 0.6);
+  --line: rgb(242 237 228 / 0.12);
+  --rec: #ff3b1f;
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-rec: var(--rec);
+
+  --font-serif: var(--font-instrument-serif);
+  --font-sans: var(--font-inter-tight);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {

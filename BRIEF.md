@@ -80,3 +80,56 @@
 - Botón de WhatsApp fijo en celular.
 - Meta Pixel con evento "Contact" al tocar WhatsApp.
 - Videos cortos comprimidos, con poster y carga diferida.
+
+## Referencias
+
+Se toman efectos y experiencia de scroll, no la estética (la estética es la de DESIGN.md, "Sala de edición"). Analizadas con playwright-cli a 1440 px (19/10/2026). Las tres funcionan sobre un único canvas WebGL a pantalla completa: la página no scrollea de verdad, la rueda del mouse avanza una animación.
+
+### 1. https://studiomirage.io/ → sección Formatos
+**Mecánica**
+- Entrada: la cámara arranca arriba de una sala de 12 lados, vista desde el techo como un portal negro con borde iluminado. Con el scroll baja y se inclina hacia adentro. El borde se agranda hasta salir de la pantalla y aparecen las paredes, que son pantallas de video.
+- Llegada: termina a la altura de los ojos, de frente a una pantalla que ocupa alrededor del 70% del ancho, con las vecinas asomando en perspectiva a los costados.
+- Texto: el nombre aparece con un fundido, centrado sobre el video, recién cuando la cámara se detiene. Abajo quedan "prev/next" y un botón.
+- Después: el scroll avanza de a una pantalla. Cada movimiento de la rueda gira la sala a la pantalla siguiente y cambia el título.
+
+**Adaptación (aprobada)**
+- Sin WebGL, con ScrollTrigger. La sección queda fija. Cada formato (foto de estudio, estático, comercial, UGC) arranca como una tarjeta de video al 40% del tamaño, con bordes redondeados, y con el scroll crece hasta ocupar toda la pantalla y los bordes quedan rectos.
+- Al llegar al 100% entran su nombre y un dato encima ("listo en días", "20 versiones"). Después pasa al formato siguiente.
+- Avanza con el scroll, sin saltos.
+
+### 2. https://www.junkbranding.com/ → "Del análisis a los anuncios"
+**Mecánica**
+- Partículas: miles de partículas que nunca desaparecen. Entre una sección y otra se dispersan y se reagrupan en otra forma: anillo → medusa → fuegos artificiales → hojas → nieve. Al final forman el logo de texto del footer. La transición avanza con el scroll.
+- Textos: entran por la izquierda (título y lista), y el bloque anterior se desvanece.
+- Trabajos: aparecen como ventanas de navegador inclinadas en 3D que vienen desde el fondo, de a una por cada paso de scroll. A la izquierda queda un título grande, con contador "01 / 07" y un índice donde se resalta el trabajo activo.
+- Progreso: abajo a la derecha hay un medidor de profundidad que sube de 1.000 m a 4.000 m (equivale al timecode).
+- Header: el texto aparece con efecto de decodificación (XXXXXX → letras).
+
+**Adaptación (aprobada)**
+- Se toma solo el efecto de scroll, sin la medusa ni las estrellas. La sección queda fija. La ficha de producto (foto, "quieto · 80 en stock") se desarma: las letras y los números vuelan con SplitText y la foto se recorta y escala hasta el formato 9:16. Todo se rearma como el anuncio de liquidación.
+- Cierra con el stock bajando con animación de conteo (80 → 12).
+
+### 3. https://virtuallyeverafter.xyz/ → galería de anuncios
+**Mecánica**
+- Entrada: te hace elegir entre "space (3D)" y "page (2D editorial)". Es una alternativa liviana bien explícita.
+- El 3D: un edificio en wireframe; hacés clic y entrás a un pasillo con una pantalla grande al fondo. El scroll mueve la cámara hacia adelante ("scroll to approach · drag to look"). La pantalla crece hasta llenar la vista y quedás "adentro" del video. Desde ahí, el scroll pasa de un video a otro, con capítulos numerados (1, 2, 3). Por delante flotan dibujos lineales blancos, como una capa que se mueve a otra velocidad.
+
+**Adaptación (aprobada)**
+- Un pasillo con CSS 3D (perspective + translateZ), sin Three.js. Los reels verticales van alternados en las paredes izquierda y derecha, y el scroll mueve la cámara hacia adelante. Los reels son los protagonistas.
+- Solo se reproduce el reel que está cerca. Los demás quedan pausados con su imagen de portada.
+- Celular: carrusel con swipe horizontal, de a un reel por vez.
+- Con reduced-motion: grilla estática de portadas; se toca y se reproduce.
+
+### Ideas propias
+- Timecode (`00:00:12:04`): fijo en una esquina, avanza según cuánto se scrolleó la página entera.
+- Cada sección numerada como claqueta: "TOMA 01…10" (juega con el nombre Take One).
+- Punto rojo REC titilando junto al botón de WhatsApp, y quieto con reduced-motion.
+
+### Criterios y reglas
+- Los videos son los protagonistas; el efecto está para mostrarlos, no para lucirse.
+- Cada efecto tiene que dejar claro qué se ofrece. Si no ayuda a entender, se saca.
+- Los números (USD 2.850 vs. USD 150, días vs. semanas) tienen que pegar: aparecen con animación de conteo o de corte.
+- Celular primero: si un efecto no anda bien en mobile, tiene versión simple.
+- Scroll siempre nativo (Lenis + ScrollTrigger). Nada de secuestrar la rueda ni de saltos de a una pantalla.
+- Cada sección fija dura poco scroll: máximo ~2 pantallas de recorrido.
+- El botón de WhatsApp queda siempre visible. Si una sección se hace larga, se recorta el efecto, no el CTA.

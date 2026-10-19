@@ -15,26 +15,30 @@
 - Acciones secundarias: ninguna aparte de WhatsApp. El input "Pegá el link de tu tienda" es otra entrada a la misma conversión.
 
 ## Secciones
-<!-- 10 secciones. El orden y la estructura final se definen en el paso 6. -->
-1. Portada: muro de videos verticales en loop, estilo reels.
-2. Input "Pegá el link de tu tienda".
-3. Antes/después (slider arrastrable).
-4. Del análisis a los anuncios (animado con scroll).
-5. Servicios y precios (Muestra gratis, Pack 20 piezas, Todo armado, Kit fecha, Abono).
-6. Comparativa agencia vs. nosotros + calculadora.
-7. Reporte semanal (chat simulado, chico y sin protagonismo).
-8. Testimonios (relleno).
-9. FAQ.
-10. Cierre.
+<!-- 13 secciones, numeradas como claqueta TOMA 01…13. Detalle en "Estructura" al final. -->
+1. Portada (muro de reels + CTA + input "Pegá el link de tu tienda").
+2. Problema.
+3. Formatos (fija).
+4. Agencia vs. nosotros (tabla + calculadora).
+5. Qué incluye.
+6. Del análisis a los anuncios (fija).
+7. Antes/después (slider).
+8. Cómo funciona.
+9. Galería de anuncios (fija).
+10. Precios (con el chat del reporte semanal dentro del Abono).
+11. Confianza (testimonios de relleno + garantías).
+12. FAQ.
+13. Cierre.
 
 ## Funcionalidades
 <!-- Una por línea: qué hace, qué datos usa, dónde se guardan -->
 - Botones de WhatsApp: abren WhatsApp con un mensaje distinto por sección. Número desde `site.ts`, mensajes en `content.ts`. No se guarda nada.
 - Input "Pegá el link de tu tienda": abre WhatsApp con el link en el mensaje. No se guarda nada.
 - Slider de antes/después arrastrable. Imágenes en `/public/media/`.
-- Calculadora: cantidad de fotos y videos → precio de agencia vs. el nuestro. Valores de relleno en `content.ts`:
-  - Agencia = fotos × USD 55 + videos × USD 300.
-  - Nosotros = (fotos + videos) × USD 7,5, con un mínimo de USD 150.
+- Calculadora: cantidad de fotos y videos → precio de agencia vs. el nuestro. Valores de relleno en `content.ts`, coherentes con la tabla comparativa:
+  - Agencia = fotos × USD 35 + videos × USD 200 + USD 500 (setup de Meta).
+  - Nosotros = máx(USD 150, piezas × USD 7,5).
+  - Valor inicial: 10 fotos + 10 videos → USD 2.850 vs. USD 150 (igual que la tabla).
 - Botón de WhatsApp fijo en celular.
 - Meta Pixel con evento "Contact" al tocar WhatsApp. [PENDIENTE: ID del Pixel]
 
@@ -133,3 +137,34 @@ Se toman efectos y experiencia de scroll, no la estética (la estética es la de
 - Scroll siempre nativo (Lenis + ScrollTrigger). Nada de secuestrar la rueda ni de saltos de a una pantalla.
 - Cada sección fija dura poco scroll: máximo ~2 pantallas de recorrido.
 - El botón de WhatsApp queda siempre visible. Si una sección se hace larga, se recorta el efecto, no el CTA.
+
+## Estructura (aprobada, paso 6)
+
+Cada sección lleva su claqueta "TOMA 0X". Tres secciones fijas (03, 06 y 09), separadas entre sí, de máximo ~2 pantallas de recorrido cada una. Siempre visibles: timecode, barra superior (wordmark + CTA de WhatsApp con punto REC) y, en celular, botón de WhatsApp fijo abajo.
+
+| Toma | Sección | Contenido | Efecto | Mensaje de WhatsApp (borrador) |
+|---|---|---|---|---|
+| 01 | Portada | Titular "Te armamos todo", CTA de muestra gratis e input "Pegá el link de tu tienda". | Muro de reels en loop que entra con cortes secos. | "Quiero mi muestra" / "Esta es mi tienda: {link}" |
+| 02 | Problema | Corto. | Sin sección fija; fundidos. | — |
+| 03 | Formatos | Los "ejemplos grandes" de calidad: foto de estudio, estático, comercial, UGC, cada uno con nombre y dato ("listo en días", "20 versiones"). | Fija, inmersión: cada formato crece del 40% a pantalla completa. | "Quiero ver formatos para mi tienda" |
+| 04 | Agencia vs. nosotros | Tabla (agencia desde USD 2.850 vs. nosotros desde USD 150; nota "Referencia: tarifario.info, sept. 2026") + calculadora + "por qué es más barato sin ser peor". | Números con conteo en rojo REC. | "Calculé {n} piezas, quiero mi presupuesto" |
+| 05 | Qué incluye | Análisis, anuncios, setup de Meta y Claude opcional (solo para Tiendanube). | Fundidos. | — |
+| 06 | Del análisis a los anuncios | La ficha "quieto · 80 en stock" se transforma en el anuncio de liquidación. | Fija: la ficha se desarma y se rearma como anuncio; cierra con conteo 80 → 12. | "Quiero que analicen mi tienda" |
+| 07 | Antes/después | Foto original vs. anuncio terminado. | Slider arrastrable. | — |
+| 08 | Cómo funciona | 4 pasos + "lo único que ponés vos": la pauta y, opcional, Claude Pro. | Fundidos / cortes. | "Quiero arrancar" |
+| 09 | Galería de anuncios | Videos verticales tipo reel como protagonistas. | Fija, pasillo en CSS 3D; swipe en celular; grilla estática con reduced-motion. | "Quiero anuncios así" |
+| 10 | Precios | Muestra gratis, Pack 20 piezas, Todo armado, Kit fecha, Abono. Chat simulado del reporte semanal dentro del Abono, chico y sin protagonismo. | Fundidos. | Uno por plan ("Quiero mi muestra", "Quiero el kit Cyber", etc.) |
+| 11 | Confianza | Testimonios de relleno + "Tu cuenta de Meta y tu plata son tuyas", "Nada cambia en tu tienda sin tu confirmación", "Muestra gratis antes de pagar". | Fundidos. | — |
+| 12 | FAQ | Las 7 preguntas de abajo. | Acordeón. | "Tengo otra pregunta" |
+| 13 | Cierre | CTA final grande con el punto REC. | Corte seco. | "Quiero mi muestra" |
+
+### FAQ
+1. ¿Se nota que es IA?
+2. ¿Cuánto tardan? (plazos)
+3. ¿Los anuncios son míos?
+4. ¿Cuánto tengo que poner de pauta?
+5. ¿Tengo que pagar Claude Pro?
+6. ¿Qué permisos necesitan sobre mi tienda?
+7. ¿Sirve si mi tienda no es Tiendanube?
+
+Las respuestas van como borrador en `content.ts`. "Formas de pago" queda afuera hasta que se defina.

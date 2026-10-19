@@ -42,7 +42,7 @@ Detalle de la mecánica y las adaptaciones aprobadas en `BRIEF.md` → "Referenc
 - Tarjetas / bloques: superficie `#1A1815`, borde crema al 12%, sin sombras ni blur. Esquinas de 4–8 px.
 - Imágenes y videos: verticales 9:16 como formato principal, recortes limpios, sin bordes gruesos. Pueden llevar marcas de encuadre (esquinas finas) o un timecode chico encima, como monitor de edición.
 - Navegación: barra superior mínima (wordmark + CTA de WhatsApp). Timecode fijo en una esquina como indicador de progreso. En celular, botón de WhatsApp fijo abajo, siempre visible.
-- Recursos fijos: grano de película sutil sobre todo el sitio (capa superpuesta, sin interferir con los clics), timecode, "TOMA 01…10", punto REC.
+- Recursos fijos: grano de película sutil sobre todo el sitio (capa superpuesta, sin interferir con los clics), timecode, "TOMA 01…13", punto REC.
 
 ## Animación y movimiento
 Lenguaje de edición: cortes secos, fundidos y escalas. Easing suave (`power2`/`power3` out, `expo.out` para escalas grandes), sin rebotes ni efectos elásticos. GSAP + ScrollTrigger + Lenis; scroll siempre nativo.

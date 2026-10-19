@@ -25,7 +25,7 @@ Calidad de comercial de agencia por una fracción del precio, decidido con los d
 ## Capabilities and Constraints
 - Servicios (precios de relleno): Muestra gratis | Pack 20 piezas desde USD 150 | Todo armado desde USD 490 | Kit fecha desde USD 260 | Abono desde USD 320/mes.
 - Formatos: foto de estudio, estático, comercial, UGC.
-- Calculadora (relleno): agencia = fotos × USD 55 + videos × USD 300; Take One = (fotos + videos) × USD 7,5, mínimo USD 150.
+- Calculadora (relleno): agencia = fotos × USD 35 + videos × USD 200 + USD 500 (setup de Meta); Take One = máx(USD 150, piezas × USD 7,5). Inicial: 10 fotos + 10 videos → USD 2.850 vs. USD 150.
 - Única conversión: WhatsApp. Botón de WhatsApp siempre visible. Meta Pixel con evento "Contact" al tocar WhatsApp.
 - Datos de identidad en `src/config/site.ts`; textos, precios y rutas de medios en `content.ts` (toma el WhatsApp de `site.ts`). Medios en `/public/media/` con nombres fijos, reemplazables sin tocar componentes.
 - Stack: Next.js (App Router) + TypeScript + Tailwind, GSAP + ScrollTrigger + Lenis, deploy en Cloudflare Workers. Scroll siempre nativo.
@@ -34,7 +34,7 @@ Calidad de comercial de agencia por una fracción del precio, decidido con los d
 ## Brand Commitments
 - Nombre: "Take One"; marca/autor: "MCM Digital". "Te armamos todo" es frase de venta, no nombre.
 - Voz: rioplatense con voseo, directo, simple, sin tecnicismos, de igual a igual con el dueño.
-- Las secciones se numeran como claqueta ("TOMA 01…10"), en juego con el nombre.
+- Las secciones se numeran como claqueta ("TOMA 01…13"), en juego con el nombre.
 
 ## Evidence on Hand
 - No hay contenido real todavía. Videos, fotos, antes/después, testimonios y precios son relleno.

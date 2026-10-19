@@ -1,0 +1,2 @@
+# Copiar a .dev.vars para desarrollo local. En producción: `npx wrangler secret put CONTACT_WEBHOOK_URL`
+CONTACT_WEBHOOK_URL=https://n8n.tu-dominio.com/webhook/contacto-cliente

@@ -40,7 +40,7 @@
   - Agencia = fotos × USD 35 + videos × USD 200.
   - Nosotros = máx(USD 150, piezas × USD 7,5).
   - Valor inicial: 10 fotos + 10 videos → USD 2.350 vs. USD 150 (igual que la tabla).
-  - Mínimo total de 1 pieza: si fotos + videos = 1, se desactiva el "−" que dejaría el total en 0.
+  - Mínimo total de 20 piezas (Pack anuncios): si fotos + videos = 20, se desactiva el "−" que bajaría el total. Debajo de los contadores: "Mínimo 20 piezas (Pack anuncios)". Con 20 fotos y 0 videos: USD 700 vs. USD 150; la comparación nunca se da vuelta.
 - Botón de WhatsApp fijo en celular.
 - Meta Pixel con evento "Contact" al tocar WhatsApp. [PENDIENTE: ID del Pixel]
 

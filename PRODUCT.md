@@ -25,7 +25,7 @@ Calidad de comercial de agencia por una fracción del precio, decidido con los d
 ## Capabilities and Constraints
 - Servicios (precios de relleno): Muestra gratis | Pack 20 piezas desde USD 150 | Todo armado desde USD 490 | Kit fecha desde USD 260 | Abono desde USD 320/mes.
 - Formatos: foto de estudio, estático, comercial, UGC.
-- Calculadora (relleno): solo piezas. Agencia = fotos × USD 35 + videos × USD 200; Take One = máx(USD 150, piezas × USD 7,5). Inicial: 10 fotos + 10 videos → USD 2.350 vs. USD 150. Mínimo 1 pieza en total.
+- Calculadora (relleno): solo piezas. Agencia = fotos × USD 35 + videos × USD 200; Take One = máx(USD 150, piezas × USD 7,5). Inicial: 10 fotos + 10 videos → USD 2.350 vs. USD 150. Mínimo 20 piezas en total (Pack anuncios).
 - Única conversión: WhatsApp. Botón de WhatsApp siempre visible. Meta Pixel con evento "Contact" al tocar WhatsApp.
 - Datos de identidad en `src/config/site.ts`; textos, precios y rutas de medios en `content.ts` (toma el WhatsApp de `site.ts`). Medios en `/public/media/` con nombres fijos, reemplazables sin tocar componentes.
 - Stack: Next.js (App Router) + TypeScript + Tailwind, GSAP + ScrollTrigger + Lenis, deploy en Cloudflare Workers. Scroll siempre nativo.

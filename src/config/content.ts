@@ -101,11 +101,14 @@ export const content = {
       text: "Sin rodaje, sin modelos, sin locación y sin equipo de filmación. Tu producto real, en escenas con calidad de comercial.",
     },
     // Fórmula de relleno (BRIEF.md), solo piezas: agencia = fotos × 35 + videos × 200;
-    // nosotros = máx(150, piezas × 7,5). Mínimo 1 pieza en total.
+    // nosotros = máx(150, piezas × 7,5). Mínimo 20 piezas en total (Pack anuncios),
+    // así la comparación nunca se da vuelta (20 fotos: USD 700 vs. USD 150).
     calculator: {
       title: "Calculá tu pedido",
       photos: { label: "Fotos", initial: 10, agencyUnit: 35 },
       videos: { label: "Videos", initial: 10, agencyUnit: 200 },
+      min: 20,
+      minNote: "Mínimo 20 piezas (Pack anuncios)",
       max: 100,
       usUnit: 7.5,
       usMin: 150,

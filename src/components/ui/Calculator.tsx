@@ -12,7 +12,7 @@ const usd = (n: number) => `USD ${n.toLocaleString("es-AR", { maximumFractionDig
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
 
 // Calculadora de piezas (fórmula de relleno de content.ts, solo piezas, sin setup de Meta).
-// Recalcula en vivo; mínimo 1 pieza en total. No guarda nada.
+// Recalcula en vivo; mínimo 20 piezas en total (Pack anuncios). No guarda nada.
 export function Calculator() {
   const [photos, setPhotos] = useState<number>(calc.photos.initial);
   const [videos, setVideos] = useState<number>(calc.videos.initial);
@@ -37,8 +37,8 @@ export function Calculator() {
       <div className="mt-5 grid grid-cols-2 gap-3">
         {fields.map((f) => {
           const name = f.label.toLowerCase();
-          // El "−" se desactiva en 0 y cuando dejaría el total en 0 piezas.
-          const canDec = f.value > 0 && total > 1;
+          // El "−" se desactiva en 0 y cuando bajaría el total por debajo del mínimo.
+          const canDec = f.value > 0 && total > calc.min;
           const canInc = f.value < calc.max;
           return (
             <div key={f.label} className="border border-line p-3">
@@ -72,6 +72,7 @@ export function Calculator() {
           );
         })}
       </div>
+      <p className="mt-3 text-[13px] text-muted">{calc.minNote}</p>
       <dl className="mt-6 space-y-3 border-t border-line pt-5" aria-live="polite">
         <div className="flex items-baseline justify-between">
           <dt className="text-muted">{calc.agencyLabel}</dt>

@@ -3,6 +3,7 @@ import { Instrument_Serif, Inter_Tight, JetBrains_Mono } from "next/font/google"
 import { site } from "@/config/site";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { ContactTracker } from "@/components/seo/ContactTracker";
 import { MetaPixel } from "@/components/seo/MetaPixel";
 import "./globals.css";
 
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="font-sans">
         <JsonLd />
         <MetaPixel />
+        <ContactTracker />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

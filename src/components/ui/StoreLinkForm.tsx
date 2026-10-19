@@ -23,7 +23,7 @@ export function StoreLinkForm({ label, placeholder, button, emptyMessage, messag
     // whatsappUrl codifica el texto con encodeURIComponent.
     const url = whatsappUrl(link ? message.replace("{link}", link) : emptyMessage);
     window.open(url, "_blank", "noopener,noreferrer");
-    trackContact();
+    trackContact("toma-01");
   };
 
   return (

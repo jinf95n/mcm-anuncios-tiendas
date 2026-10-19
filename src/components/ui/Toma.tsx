@@ -31,6 +31,7 @@ export function Toma({ n, label }: { n: string; label: string }) {
   return (
     <div
       ref={ref}
+      data-toma={`toma-${n}`}
       className="flex items-stretch border-y border-line font-mono text-[11px] uppercase tracking-[0.14em] text-muted md:text-xs"
     >
       <span className="flex shrink-0 items-center gap-2 whitespace-nowrap border-r border-line py-2 pr-4 text-foreground">

@@ -17,7 +17,7 @@ export function Header() {
         </a>
         <Timecode className="ml-auto" />
         <div className="hidden md:block">
-          <WhatsAppButton message={content.header.message}>{content.header.cta}</WhatsAppButton>
+          <WhatsAppButton message={content.header.message} track="header">{content.header.cta}</WhatsAppButton>
         </div>
       </div>
     </header>

@@ -8,7 +8,7 @@
 - [x] 6. Estructura
 - [x] 7. Construcción
 - [x] 8. Animaciones
-- [ ] 9. Funcionalidades
+- [x] 9. Funcionalidades
 - [ ] 10. Revisión visual
 - [ ] 11. Textos finales y SEO
 - [ ] 12. Deploy

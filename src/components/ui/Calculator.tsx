@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { content } from "@/config/content";
-import { trackContact } from "@/lib/pixel";
 import { WhatsAppButton } from "./WhatsAppButton";
 
 const { versus } = content;
@@ -83,7 +82,7 @@ export function Calculator() {
           <dd className="font-mono text-[28px] tabular-nums text-rec">{usd(us)}</dd>
         </div>
       </dl>
-      <WhatsAppButton message={message} onClick={trackContact} className="mt-6 w-full">
+      <WhatsAppButton message={message} className="mt-6 w-full">
         {versus.cta}
       </WhatsAppButton>
     </div>

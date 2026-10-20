@@ -89,7 +89,7 @@ export const content = {
   versus: {
     toma: { n: "04", label: "Agencia vs. nosotros" },
     title: ["Lo que cobra una agencia.", "Lo que cobramos *nosotros.*"],
-    agency: { label: "Agencia / productora", price: 2350 },
+    agency: { label: "Agencia o productora", price: 2350 },
     us: { label: "Take One", price: 150 },
     priceNote: "20 piezas, desde. Solo piezas: el setup de Meta va aparte.",
     rows: [

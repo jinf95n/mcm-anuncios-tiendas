@@ -75,7 +75,7 @@ export function Calculator() {
       <dl className="mt-6 space-y-3 border-t border-line pt-5" aria-live="polite">
         <div className="flex items-baseline justify-between">
           <dt className="text-muted">{calc.agencyLabel}</dt>
-          <dd className="font-mono text-[20px] tabular-nums text-muted line-through decoration-1">{usd(agency)}</dd>
+          <dd className="font-mono text-[20px] tabular-nums text-muted">{usd(agency)}</dd>
         </div>
         <div className="flex items-baseline justify-between">
           <dt>{calc.usLabel}</dt>

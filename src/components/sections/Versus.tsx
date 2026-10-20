@@ -15,17 +15,17 @@ export function Versus() {
         <Toma {...versus.toma} />
         <Title lines={versus.title} className="mt-12 text-[clamp(2.5rem,6vw,4.5rem)] md:mt-16" />
 
-        {/* Los dos números que tienen que pegar: el de la agencia chico y tachado,
-            el nuestro enorme en rojo REC, cruzando la grilla. */}
+        {/* Los dos números que tienen que pegar: el de la agencia chico y en gris (sin tachar,
+            para que no se lea como un descuento nuestro), el nuestro enorme en rojo REC. */}
         <div className="mt-14 grid gap-10 border-t border-line pt-8 md:grid-cols-12 md:items-end md:gap-8">
           <div className="md:col-span-4">
-            <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">{versus.agency.label}</p>
-            <p className="mt-3 font-mono text-[clamp(2rem,4vw,3.25rem)] leading-none tabular-nums tracking-[-0.03em] text-muted line-through decoration-1">
+            <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-foreground md:text-[14px]">{versus.agency.label}</p>
+            <p className="mt-3 font-mono text-[clamp(2rem,4vw,3.25rem)] leading-none tabular-nums tracking-[-0.03em] text-muted">
               <CountUp value={versus.agency.price} prefix="USD " />
             </p>
           </div>
           <div className="md:col-span-8">
-            <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-foreground">{versus.us.label}</p>
+            <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-foreground md:text-[14px]">{versus.us.label}</p>
             <p className="mt-3 whitespace-nowrap font-mono text-[clamp(4.5rem,13vw,9.5rem)] leading-[0.85] tabular-nums tracking-[-0.05em] text-rec">
               <CountUp value={versus.us.price} prefix="USD " />
             </p>

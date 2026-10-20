@@ -9,7 +9,7 @@
 - [x] 7. Construcción
 - [x] 8. Animaciones
 - [x] 9. Funcionalidades
-- [ ] 10. Revisión visual
+- [x] 10. Revisión visual
 - [ ] 11. Textos finales y SEO
 - [ ] 12. Deploy
 

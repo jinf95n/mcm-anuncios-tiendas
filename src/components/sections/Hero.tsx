@@ -27,7 +27,7 @@ export function Hero() {
             <WhatsAppButton message={hero.message} size="lg">
               {hero.cta}
             </WhatsAppButton>
-            <p className="font-mono text-[12px] uppercase tracking-[0.12em] text-muted">{hero.note}</p>
+            <p className="text-[13px] text-muted">{hero.note}</p>
           </div>
 
           <StoreLinkForm {...hero.storeInput} />

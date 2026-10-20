@@ -33,15 +33,15 @@ export function Analysis() {
 
             <div className="mt-10 grid items-center gap-6 md:mt-14 md:grid-cols-[1fr_auto_1fr] md:gap-10">
               {/* Ficha de producto: el dato */}
-              <article data-ficha className="rounded-[6px] border border-line bg-surface p-4 md:p-5">
+              <article data-ficha className="rounded-[6px] border border-line bg-surface p-4 md:p-6">
                 <div className="flex gap-4">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={product.image} alt="" className="aspect-[4/5] w-20 shrink-0 rounded-[3px] object-cover sm:w-28 md:w-36" />
+                  <img src={product.image} alt="" className="aspect-[4/5] w-20 shrink-0 rounded-[3px] object-cover sm:w-28 md:w-44" />
                   <div className="flex min-w-0 flex-col">
                     <span className="w-fit border border-rec px-2 py-0.5 font-mono text-[11px] uppercase tracking-[0.14em] text-rec">
                       <span data-split>{product.status}</span>
                     </span>
-                    <h3 data-split className="mt-3 text-[20px] font-semibold leading-tight">
+                    <h3 data-split className="mt-3 text-[20px] font-semibold leading-tight md:text-[26px]">
                       {product.name}
                     </h3>
                     <dl className="mt-auto grid grid-cols-3 gap-2 pt-4 sm:gap-3">
@@ -50,7 +50,7 @@ export function Analysis() {
                         const isDays = d.value === String(signal.days);
                         return (
                           <div key={d.label}>
-                            <dt data-split className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted">
+                            <dt data-split className="font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
                               {d.label}
                             </dt>
                             <dd className="mt-1 whitespace-nowrap font-mono text-[15px] tabular-nums md:text-[18px]">

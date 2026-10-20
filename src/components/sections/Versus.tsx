@@ -30,7 +30,7 @@ export function Versus() {
             </p>
           </div>
         </div>
-        <p className="mt-3 font-mono text-[12px] uppercase tracking-[0.12em] text-muted">{versus.priceNote}</p>
+        <p className="mt-3 text-[13px] text-muted">{versus.priceNote}</p>
 
         <div className="mt-16 grid gap-14 lg:grid-cols-12 lg:gap-8">
           {/* Tabla comparativa */}

@@ -26,7 +26,7 @@ export function AnalysisStage({ children }: { children: ReactNode }) {
           const stage = ref.current!;
           const ficha = stage.querySelector<HTMLElement>("[data-ficha]")!;
           const ad = stage.querySelector<HTMLElement>("[data-ad]")!;
-          const split = SplitText.create(stage.querySelectorAll("[data-split]"), { type: "chars" });
+          const split = SplitText.create(stage.querySelectorAll("[data-split]"), { type: "words,chars" });
 
           // Distancia del centro de la ficha al centro del anuncio (sin contar el x/y ya aplicado).
           const delta = (axis: "x" | "y") => () => {

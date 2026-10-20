@@ -25,7 +25,8 @@ export function BeforeAfter() {
             </dl>
           </div>
 
-          <div className="md:col-span-7 md:col-start-6">
+          {/* 3:4 entero en pantalla: el ancho se limita para que el alto no pase el 80% de la ventana. */}
+          <div className="md:col-span-7 md:col-start-6 md:ml-auto md:w-full md:max-w-[calc(80svh*3/4)]">
             <BeforeAfterSlider before={ba.before} after={ba.after} hint={ba.hint} />
           </div>
         </div>

@@ -22,7 +22,7 @@ export const content = {
     message: "Hola! Quiero mi muestra gratis.",
     storeInput: {
       label: "Pegá el link de tu tienda",
-      placeholder: "tutienda.mitiendanube.com",
+      placeholder: "tutienda.com.ar",
       button: "Enviar por WhatsApp",
       // Sin link: mensaje base. Con link: {link} se reemplaza por lo que pegue el visitante.
       emptyMessage: "Hola, quiero mi muestra gratis",
@@ -162,13 +162,13 @@ export const content = {
     toma: { n: "06", label: "Del análisis a los anuncios" },
     title: ["Un *dato* de tu tienda.", "Un anuncio que lo resuelve."],
     product: {
-      name: "Buzo oversize gris",
+      name: "Aromatizador automático blanco",
       image: media("analisis-producto.jpg"),
       status: "Quieto",
       data: [
         { label: "Stock", value: "80" },
         { label: "Días sin venderse", value: "47" },
-        { label: "Precio", value: "$ 38.900" },
+        { label: "Precio", value: "$ 24.900" },
       ],
     },
     ad: {
@@ -221,14 +221,14 @@ export const content = {
     title: ["Mirá cómo", "*quedan.*"],
     note: "Videos de ejemplo.",
     reels: [
-      { ...video("galeria-1"), label: "Indumentaria · UGC" },
-      { ...video("galeria-2"), label: "Deco · Comercial" },
-      { ...video("galeria-3"), label: "Cosmética · Estático" },
-      { ...video("galeria-4"), label: "Calzado · Comercial" },
-      { ...video("galeria-5"), label: "Accesorios · UGC" },
-      { ...video("galeria-6"), label: "Mascotas · Comercial" },
-      { ...video("galeria-7"), label: "Bazar · Estático" },
-      { ...video("galeria-8"), label: "Deportes · UGC" },
+      { ...video("galeria-1"), label: "Accesorios · Comercial" },
+      { ...video("galeria-2"), label: "Pizzería · Comercial" },
+      { ...video("galeria-3"), label: "Pizzería · UGC" },
+      { ...video("galeria-4"), label: "Joyería · Comercial" },
+      { ...video("galeria-5"), label: "Carnicería · UGC" },
+      { ...video("galeria-6"), label: "Bebidas · Comercial" },
+      { ...video("galeria-7"), label: "Restaurante · Comercial" },
+      { ...video("galeria-8"), label: "Pastelería · UGC" },
     ],
     cta: "Quiero anuncios así",
     message: "Hola! Vi la galería y quiero anuncios así para mi tienda.",

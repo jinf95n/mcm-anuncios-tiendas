@@ -40,7 +40,7 @@ export function Pricing() {
 
                   {isAbono && (
                     <figure className="mt-6 max-w-[380px] rounded-[6px] border border-line bg-surface p-4" aria-label={report.title}>
-                      <figcaption className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
+                      <figcaption className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
                         <span>
                           {report.title} · {report.time}
                         </span>
@@ -50,7 +50,7 @@ export function Pricing() {
                         {report.lines.map((line) => (
                           <p key={line}>{line}</p>
                         ))}
-                        <p className="pt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">{report.actionsLabel}</p>
+                        <p className="pt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">{report.actionsLabel}</p>
                         <ol className="list-inside list-decimal space-y-1 marker:font-mono marker:text-rec">
                           {report.actions.map((a) => (
                             <li key={a}>{a}</li>

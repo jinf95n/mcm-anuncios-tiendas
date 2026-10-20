@@ -26,8 +26,11 @@ export function Formats() {
 
       <FormatsStage>
         {formats.items.map((item, i) => {
-          // Vertical en pantalla horizontal: entero y centrado, sin recortar.
-          const fit = item.vertical ? "object-cover landscape:object-contain" : "object-cover";
+          // Vertical en pantalla horizontal: entero y centrado, sin recortar, con la franja de abajo libre
+          // para el texto (que no tape la pieza).
+          const fit = item.vertical
+            ? "object-cover landscape:object-contain landscape:pt-20 landscape:pb-[26svh]"
+            : "object-cover";
           const still = item.media.type === "video" ? item.media.poster : item.media.src;
           return (
             <article key={item.name} data-format className="relative h-[86svh] min-h-[520px] overflow-hidden bg-surface">
@@ -44,7 +47,10 @@ export function Formats() {
                   <img className={`relative h-full w-full ${fit}`} src={item.media.src} alt="" loading="lazy" />
                 )}
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+              {/* En los verticales, más oscuro abajo: que el botón propio de la pieza no compita con el texto. */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-t from-background to-transparent ${item.vertical ? "via-background/70 via-30% to-60%" : "via-background/20"}`}
+              />
               <FrameMarks inset="inset-5 md:inset-8" />
 
               <Container className="relative flex h-full flex-col justify-end pb-12 md:pb-16">

@@ -26,12 +26,14 @@ export function Reel({ src, poster, label, className = "" }: Props) {
   );
 }
 
-// Botón invisible sobre todo el video: lo abre en el visor. En hover el video se aclara apenas.
-export function VideoTrigger({ src, poster, label = "" }: { src: string; poster: string; label?: string }) {
+// Botón invisible sobre todo el medio: lo abre en el visor. En hover se aclara apenas.
+type TriggerProps = { src: string; poster?: string; label?: string; type?: "video" | "image" };
+export function VideoTrigger({ src, poster = "", label = "", type = "video" }: TriggerProps) {
   return (
     <button
       type="button"
       data-video={src}
+      data-media-type={type}
       data-poster={poster}
       data-label={label}
       aria-label={label ? `${content.viewer.open}: ${label}` : content.viewer.open}

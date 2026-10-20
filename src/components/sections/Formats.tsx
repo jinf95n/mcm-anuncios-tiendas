@@ -53,7 +53,7 @@ export function Formats() {
                 className={`absolute inset-0 bg-gradient-to-t from-background to-transparent ${item.vertical ? "via-background/70 via-30% to-60%" : "via-background/20"}`}
               />
               <FrameMarks inset="inset-5 md:inset-8" />
-              {item.media.type === "video" && <VideoTrigger {...item.media} label={item.name} />}
+              <VideoTrigger {...item.media} label={item.name} />
 
               <Container className="pointer-events-none relative z-20 flex h-full flex-col justify-end pb-12 md:pb-16">
                 <div data-format-text>

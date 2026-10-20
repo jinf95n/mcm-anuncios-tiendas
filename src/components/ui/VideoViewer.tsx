@@ -7,11 +7,11 @@ import { WhatsAppButton } from "./WhatsAppButton";
 
 const { viewer } = content;
 
-type Clip = { src: string; poster: string; label: string };
+type Clip = { src: string; poster: string; label: string; image: boolean };
 
-// Visor a pantalla completa de los videos de ejemplo. Un solo detector de clics para toda la
-// página: cualquier botón con data-video abre el visor con ese video, desde el principio y con
-// sonido si lo tiene. Cierra con el botón, con Esc (lo da <dialog>) o tocando fuera del video.
+// Visor a pantalla completa de los ejemplos (videos y fotos de Formatos). Un solo detector de
+// clics para toda la página: cualquier botón con data-video abre el visor con ese medio; los
+// videos, desde el principio y con sonido si lo tienen. Cierra con el botón, con Esc (lo da <dialog>) o tocando fuera del video.
 // El CTA manda a WhatsApp con el rótulo del video (data-wa="visor" para el Pixel).
 export function VideoViewer() {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -28,6 +28,7 @@ export function VideoViewer() {
         src: trigger.dataset.video!,
         poster: trigger.dataset.poster ?? "",
         label: trigger.dataset.label ?? "",
+        image: trigger.dataset.mediaType === "image",
       });
     };
     document.addEventListener("click", onClick);
@@ -37,10 +38,11 @@ export function VideoViewer() {
   // Al elegir un video: abre el modal, frena el scroll de fondo y arranca desde 0.
   useEffect(() => {
     const dialog = dialogRef.current;
-    const video = videoRef.current;
-    if (!clip || !dialog || !video) return;
+    if (!clip || !dialog) return;
     if (!dialog.open) dialog.showModal();
     lenis?.stop();
+    const video = videoRef.current;
+    if (clip.image || !video) return;
     video.currentTime = 0;
     // El clic del visitante habilita el sonido; si el navegador lo bloquea, va sin sonido.
     video.muted = false;
@@ -89,16 +91,21 @@ export function VideoViewer() {
         </div>
 
         <div className="relative min-h-0 flex-1 px-5 md:px-10" onClick={(e) => e.target === e.currentTarget && close()}>
-          <video
-            ref={videoRef}
-            key={clip?.src}
-            src={clip?.src}
-            poster={clip?.poster}
-            controls
-            playsInline
-            preload="auto"
-            className="mx-auto h-full max-w-full rounded-[4px] bg-surface object-contain"
-          />
+          {clip?.image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={clip.src} alt={clip.label} className="mx-auto h-full max-w-full rounded-[4px] object-contain" />
+          ) : (
+            <video
+              ref={videoRef}
+              key={clip?.src}
+              src={clip?.src}
+              poster={clip?.poster}
+              controls
+              playsInline
+              preload="auto"
+              className="mx-auto h-full max-w-full rounded-[4px] bg-surface object-contain"
+            />
+          )}
         </div>
 
         <div className="flex justify-center px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:py-6">

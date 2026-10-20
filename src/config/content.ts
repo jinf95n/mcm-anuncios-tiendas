@@ -373,14 +373,14 @@ export const content = {
     reels: ["galeria-2", "galeria-4", "galeria-6", "galeria-8", "galeria-1", "galeria-3"].map(video),
   },
 
-  // Visor a pantalla completa de los videos de ejemplo (portada, Formatos, galería y cierre).
+  // Visor a pantalla completa de los ejemplos (portada, Formatos, galería y cierre).
   viewer: {
-    open: "Ver el video",
+    open: "Ver a pantalla completa",
     close: "Cerrar",
     cta: "Quiero uno así",
-    // {video} es el rótulo del video (ej. "Pizzería · UGC"); sin rótulo se usa el mensaje base.
-    message: "Hola! Vi el video {video} y quiero uno así para mi tienda.",
-    emptyMessage: "Hola! Vi un video de ejemplo y quiero uno así para mi tienda.",
+    // {video} es el rótulo del ejemplo (ej. "Pizzería · UGC" o "Foto de estudio"); sin rótulo se usa el mensaje base.
+    message: "Hola! Vi el ejemplo {video} y quiero uno así para mi tienda.",
+    emptyMessage: "Hola! Vi un ejemplo y quiero uno así para mi tienda.",
   },
 
   footer: {

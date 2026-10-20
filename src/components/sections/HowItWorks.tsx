@@ -9,7 +9,7 @@ const { howItWorks: how } = content;
 // TOMA 08. Cuatro pasos como fotogramas de una tira de película + "lo único que ponés vos".
 export function HowItWorks() {
   return (
-    <section className="py-24 md:py-36">
+    <section className="py-section">
       <Container>
         <Toma {...how.toma} />
         <Title lines={how.title} className="mt-12 text-[clamp(2.5rem,6vw,4.5rem)] md:mt-16" />

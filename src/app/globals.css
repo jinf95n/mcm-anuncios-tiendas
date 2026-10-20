@@ -9,7 +9,15 @@
   --muted: rgb(242 237 228 / 0.6);
   --line: rgb(242 237 228 / 0.12);
   --rec: #ff3b1f;
+  /* Ritmo vertical entre secciones (DESIGN.md → Layout y espaciado). */
+  --section-gap: 5rem;
   color-scheme: dark;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-gap: 7.5rem;
+  }
 }
 
 @theme inline {
@@ -23,6 +31,15 @@
   --font-serif: var(--font-instrument-serif);
   --font-sans: var(--font-inter-tight);
   --font-mono: var(--font-jetbrains-mono);
+}
+
+/* Cada sección lleva medio gap arriba y medio abajo: entre dos secciones queda el gap entero. */
+@utility py-section {
+  padding-block: calc(var(--section-gap) / 2);
+}
+
+@utility pt-section {
+  padding-top: calc(var(--section-gap) / 2);
 }
 
 body {

@@ -9,7 +9,7 @@ const { beforeAfter: ba } = content;
 // TOMA 07. Slider antes/después arrastrable (mouse, dedo y teclado).
 export function BeforeAfter() {
   return (
-    <section className="py-24 md:py-36">
+    <section className="py-section">
       <Container>
         <Toma {...ba.toma} />
         <div className="mt-12 grid gap-12 md:mt-16 md:grid-cols-12 md:gap-8">

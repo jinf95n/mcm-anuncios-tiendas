@@ -12,7 +12,7 @@ const { closing, footer } = content;
 // TOMA 13. Cierre: el CTA final grande, y el pie.
 export function Closing() {
   return (
-    <section className="pb-28 pt-24 md:pb-12 md:pt-36">
+    <section className="pt-section pb-28 md:pb-12">
       <Container>
         <Toma {...closing.toma} />
         <div className="mt-16 md:mt-24">

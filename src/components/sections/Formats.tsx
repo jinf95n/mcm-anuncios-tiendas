@@ -13,7 +13,7 @@ const { formats } = content;
 // Con movimiento, FormatsStage los convierte en la inmersión con scroll (tarjeta al 40% → pantalla completa).
 export function Formats() {
   return (
-    <section id="formatos" className="py-24 md:py-36">
+    <section id="formatos" className="py-section">
       <Container>
         <Toma {...formats.toma} />
         {/* Título a escala de portada, cruzando la grilla; la intro queda chica, a un costado. */}

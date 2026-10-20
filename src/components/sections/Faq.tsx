@@ -9,7 +9,7 @@ const { faq } = content;
 // TOMA 12. Preguntas frecuentes con <details> nativo (accesible y sin JS).
 export function Faq() {
   return (
-    <section id="preguntas" className="py-24 md:py-36">
+    <section id="preguntas" className="py-section">
       <Container>
         <Toma {...faq.toma} />
         <div className="mt-12 grid gap-12 md:mt-16 md:grid-cols-12 md:gap-8">

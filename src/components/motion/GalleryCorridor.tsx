@@ -21,7 +21,8 @@ export function GalleryCorridor({ children }: { children: ReactNode }) {
         const list = stage.querySelector<HTMLElement>("ul")!;
         const items = gsap.utils.toArray<HTMLElement>("li", stage);
         const videos = items.map((li) => li.querySelector("video"));
-        const depth = (items.length - 1) * SPACING + 300;
+        // La cámara frena con el último reel todavía de frente (sin pasarlo ni dejar el pasillo vacío).
+        const depth = (items.length - 1) * SPACING - 200;
 
         // AutoVideo deja de autocontrolarse dentro del pasillo.
         stage.dataset.corridor = "on";
@@ -83,7 +84,7 @@ export function GalleryCorridor({ children }: { children: ReactNode }) {
           scrollTrigger: {
             trigger: stage,
             start: "top top+=64",
-            end: "+=200%",
+            end: "+=180%",
             pin: true,
             scrub: 0.6,
             onToggle: (self) => {

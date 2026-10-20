@@ -33,7 +33,7 @@ Detalle de la mecánica y las adaptaciones aprobadas en `BRIEF.md` → "Referenc
 
 ## Layout y espaciado
 - Grilla: 12 columnas en desktop, 4 en celular. Ancho máximo del contenido 1280 px; los videos pueden ir a sangre.
-- Ritmo vertical entre secciones: 120–160 px en desktop, 80–96 px en celular.
+- Ritmo vertical entre secciones: 120 px en desktop, 80 px en celular. Token `--section-gap` en `src/app/globals.css`; las secciones usan `py-section` (medio gap arriba y medio abajo), nunca un padding propio.
 - Cada sección arranca con su claqueta "TOMA 0X" en mono, alineada a la izquierda con una línea fina de borde.
 - Cómo rompe la grilla: videos a sangre o desbordando la columna; títulos grandes que cruzan columnas; números clave enormes en serif o mono junto a texto chico. Alternar la composición entre secciones (no todo centrado ni la misma estructura en cada una).
 

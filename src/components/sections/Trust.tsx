@@ -8,7 +8,7 @@ const { trust } = content;
 // TOMA 11. Garantías en grande + testimonios de relleno, marcados como ejemplo.
 export function Trust() {
   return (
-    <section className="py-24 md:py-36">
+    <section className="py-section">
       <Container>
         <Toma {...trust.toma} />
         <Title lines={trust.title} className="mt-12 text-[clamp(2.5rem,6vw,4.5rem)] md:mt-16" />

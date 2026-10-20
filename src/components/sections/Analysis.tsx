@@ -13,7 +13,7 @@ const { product, ad, signal } = analysis;
 // Muestra el dato, no un resultado. AnalysisStage anima el conteo y la transformación.
 export function Analysis() {
   return (
-    <section id="analisis" className="py-24 md:py-36">
+    <section id="analisis" className="py-section">
       <Container>
         <Toma {...analysis.toma} />
         <Title lines={analysis.title} className="mt-12 text-[clamp(2.5rem,6vw,4.5rem)] md:mt-16" />

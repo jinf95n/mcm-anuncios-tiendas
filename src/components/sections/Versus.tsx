@@ -10,7 +10,7 @@ const { versus } = content;
 // TOMA 04. Tabla + calculadora + "por qué es más barato sin ser peor".
 export function Versus() {
   return (
-    <section id="precio" className="py-24 md:py-36">
+    <section id="precio" className="py-section">
       <Container>
         <Toma {...versus.toma} />
         <Title lines={versus.title} className="mt-12 text-[clamp(2.5rem,6vw,4.5rem)] md:mt-16" />

@@ -12,7 +12,7 @@ const ruler = ["00:00", "00:15", "00:30", "00:45", "01:00"];
 // TOMA 05. Lo que incluye "Te armamos todo", como pistas de una línea de tiempo de edición.
 export function Includes() {
   return (
-    <section className="py-24 md:py-36">
+    <section className="py-section">
       <Container>
         <Toma {...includes.toma} />
         <Title lines={includes.title} className="mt-12 text-[clamp(2.5rem,6vw,4.5rem)] md:mt-16" />

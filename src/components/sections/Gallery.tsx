@@ -12,7 +12,7 @@ const { gallery } = content;
 // Con movimiento en desktop, GalleryCorridor la convierte en el pasillo en CSS 3D.
 export function Gallery() {
   return (
-    <section id="galeria" className="py-24 md:py-36">
+    <section id="galeria" className="py-section">
       <Container>
         <Toma {...gallery.toma} />
         <div className="mt-12 flex flex-col gap-4 md:mt-16 md:flex-row md:items-end md:justify-between">

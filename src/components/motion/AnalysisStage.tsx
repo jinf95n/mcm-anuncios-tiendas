@@ -6,7 +6,7 @@ import { gsap, SplitText, useGSAP } from "@/lib/gsap";
 // "Del análisis a los anuncios" (ref. junkbranding): primero cuenta el dato de la tienda
 // (47 días sin venderse); después la ficha se desarma letra por letra y viaja hasta el
 // anuncio, que se abre desde el centro y se arma con cortes secos.
-// Desktop: sección fija de 1,5 pantallas. Celular: misma secuencia atada al scroll, sin fijar.
+// Desktop: sección fija de 1,4 pantallas. Celular: misma secuencia atada al scroll, sin fijar.
 // Sin animación queda la ficha y el anuncio lado a lado, con los valores finales.
 export function AnalysisStage({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ export function AnalysisStage({ children }: { children: ReactNode }) {
             defaults: { ease: "none" },
             scrollTrigger: mobile
               ? { trigger: stage, start: "top 70%", end: "bottom 35%", scrub: 0.6, invalidateOnRefresh: true }
-              : { trigger: stage, start: "top top+=64", end: "+=150%", pin: true, scrub: 0.6, invalidateOnRefresh: true },
+              : { trigger: stage, start: "top top+=64", end: "+=140%", pin: true, scrub: 0.6, invalidateOnRefresh: true },
           });
 
           tl.set(ad, { clipPath: "inset(50% 50% round 6px)" })
@@ -69,7 +69,7 @@ export function AnalysisStage({ children }: { children: ReactNode }) {
             .to(ad, { clipPath: "inset(0% 0% round 6px)", duration: 0.9, ease: "power2.out" }, "-=0.3")
             .fromTo("[data-ad-img]", { scale: 1.3 }, { scale: 1, duration: 0.9, ease: "power2.out" }, "<")
             .to("[data-ad-piece]", { autoAlpha: 1, duration: 0.01, stagger: 0.18 }, "-=0.2")
-            .to({}, { duration: 0.4 });
+            .to({}, { duration: 0.15 });
         },
       );
     },

@@ -8,7 +8,7 @@ const { problem } = content;
 // TOMA 02. Corta y sin sección fija: los dolores como notas de edición con timecode.
 export function Problem() {
   return (
-    <section className="py-24 md:py-36">
+    <section className="py-section">
       <Container>
         <Toma {...problem.toma} />
         <div className="mt-12 grid gap-12 md:mt-16 md:grid-cols-12 md:gap-8">

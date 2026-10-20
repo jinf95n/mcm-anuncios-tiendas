@@ -10,7 +10,7 @@ const { report } = pricing;
 // TOMA 10. Tarifario en filas, no tarjetas iguales. El reporte semanal va dentro del Abono.
 export function Pricing() {
   return (
-    <section id="precios" className="py-24 md:py-36">
+    <section id="precios" className="py-section">
       <Container>
         <Toma {...pricing.toma} />
         <div className="mt-12 flex flex-col gap-4 md:mt-16 md:flex-row md:items-end md:justify-between">

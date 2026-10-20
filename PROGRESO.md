@@ -11,7 +11,7 @@
 - [x] 9. Funcionalidades
 - [x] 10. Revisión visual
 - [x] 11. Textos finales y SEO
-- [ ] 12. Deploy
+- [x] 12. Deploy (workers.dev; subdominio y Pixel cuando haya contenido real)
 
 ## Decisiones
 

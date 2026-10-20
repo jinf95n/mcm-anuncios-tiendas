@@ -9,20 +9,26 @@ import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 export function SmoothScroll({ children }: { children: ReactNode }) {
   const lenisRef = useRef<LenisRef>(null);
 
+  // ReactLenis crea la instancia en un setState, así que no existe todavía en el primer
+  // efecto: se lee en cada frame y se engancha a ScrollTrigger cuando aparece.
   useEffect(() => {
-    const lenis = lenisRef.current?.lenis;
-    if (!lenis) return;
-    if (prefersReducedMotion()) {
-      lenis.destroy();
-      return;
-    }
-    const update = (time: number) => lenis.raf(time * 1000);
+    const reduced = prefersReducedMotion();
+    let attached: NonNullable<LenisRef["lenis"]> | undefined;
+    const update = (time: number) => {
+      const lenis = lenisRef.current?.lenis;
+      if (!lenis) return;
+      if (lenis !== attached) {
+        attached = lenis;
+        if (reduced) return lenis.destroy();
+        lenis.on("scroll", ScrollTrigger.update);
+      }
+      if (!reduced) lenis.raf(time * 1000);
+    };
     gsap.ticker.add(update);
     gsap.ticker.lagSmoothing(0);
-    lenis.on("scroll", ScrollTrigger.update);
     return () => {
       gsap.ticker.remove(update);
-      lenis.off("scroll", ScrollTrigger.update);
+      attached?.off("scroll", ScrollTrigger.update);
     };
   }, []);
 

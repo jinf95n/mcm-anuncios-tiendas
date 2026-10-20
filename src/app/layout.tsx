@@ -27,19 +27,22 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: site.name, template: `%s | ${site.name}` },
+  title: { default: site.title, template: `%s | ${site.name}` },
   description: site.description,
+  authors: [{ name: site.author }],
   alternates: { canonical: "/" },
+  // Versión de prueba (site.indexable false): que Google no la indexe.
+  robots: site.indexable ? { index: true, follow: true } : { index: false, follow: false },
   openGraph: {
     type: "website",
     locale: site.locale,
     url: site.url,
     siteName: site.name,
-    title: site.name,
+    title: site.title,
     description: site.description,
-    images: [{ url: site.ogImage, width: 1200, height: 630 }],
+    images: [{ url: site.ogImage, width: 1200, height: 630, alt: site.title }],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", title: site.title, description: site.description },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

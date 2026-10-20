@@ -58,13 +58,13 @@
 - Email: [PENDIENTE]
 - Dirección: no aplica (one page, servicio online).
 - Redes: [PENDIENTE: Instagram]
-- Dominio: [PENDIENTE: tiendas.mcmdigital.com.ar o raíz]
+- Dominio: takeone.mcmdigital.com.ar (provisional; noindex hasta tener contenido real)
 
 ## Notas de la charla con el cliente
 
 ### Decisiones
 
-- Marca: "Take One — by MCM Digital". "Te armamos todo" queda como frase de venta (titular o CTA). Dominio a definir (tiendas.mcmdigital.com.ar o raíz).
+- Marca: "Take One — by MCM Digital". "Te armamos todo" queda como frase de venta (titular o CTA). Dominio provisional: takeone.mcmdigital.com.ar.
 - Conversión única: WhatsApp [+542645581677] con mensaje precargado. Cada botón manda un mensaje distinto según la sección ("Quiero mi muestra", "Quiero el kit Cyber", etc.).
 - Mobile primero: la mayoría del tráfico llega desde Instagram en celular.
 

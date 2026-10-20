@@ -10,7 +10,7 @@
 - [x] 8. Animaciones
 - [x] 9. Funcionalidades
 - [x] 10. Revisión visual
-- [ ] 11. Textos finales y SEO
+- [x] 11. Textos finales y SEO
 - [ ] 12. Deploy
 
 ## Decisiones

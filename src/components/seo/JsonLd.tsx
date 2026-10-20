@@ -1,6 +1,7 @@
 import { site } from "@/config/site";
 
-// Datos estructurados del negocio (schema.org) para Google.
+// Datos estructurados (schema.org) para Google: el servicio (Take One) y quien lo presta
+// (MCM Digital). Los campos vacíos (email, redes) no se publican.
 export function JsonLd() {
   const sameAs = Object.values(site.social).filter(Boolean);
   const data = {
@@ -10,17 +11,20 @@ export function JsonLd() {
     description: site.description,
     url: site.url,
     image: new URL(site.ogImage, site.url).toString(),
-    telephone: site.contact.phone,
-    email: site.contact.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: site.address.street,
-      addressLocality: site.address.city,
-      addressRegion: site.address.region,
-      postalCode: site.address.postalCode,
-      addressCountry: site.address.country,
+    areaServed: { "@type": "Country", name: "Argentina" },
+    provider: {
+      "@type": "Organization",
+      name: site.author,
+      telephone: site.contact.phone,
+      ...(site.contact.email ? { email: site.contact.email } : {}),
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: site.address.city,
+        addressRegion: site.address.region,
+        addressCountry: site.address.country,
+      },
+      ...(sameAs.length ? { sameAs } : {}),
     },
-    ...(sameAs.length ? { sameAs } : {}),
   };
 
   return (

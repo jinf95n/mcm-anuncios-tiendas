@@ -293,7 +293,7 @@ export const content = {
         "Quietos: 6 productos con más de 40 en stock.",
         "4 pedidos pagados sin enviar.",
       ],
-      actions: ["Reponer talle 39 de la zapatilla blanca.", "Liquidación del buzo gris.", "Combo remera + gorra."],
+      actions: ["Reponer talle 39 de la zapatilla blanca.", "Liquidación del aromatizador blanco.", "Combo remera + gorra."],
       actionsLabel: "3 acciones para esta semana",
     },
   },

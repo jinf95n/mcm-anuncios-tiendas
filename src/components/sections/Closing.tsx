@@ -27,7 +27,7 @@ export function Closing() {
       </Container>
 
       {/* Tira de reels a sangre, cortada en seco contra el pie: eco del muro de la portada. */}
-      <div className="relative mt-16 md:mt-24" aria-hidden>
+      <div className="relative mt-16 md:mt-24">
         <div data-reveal="cut" className="grid h-[220px] grid-cols-3 gap-1.5 overflow-hidden md:h-[360px] md:grid-cols-6 md:gap-3">
           {closing.reels.map((reel, i) => (
             <Reel key={reel.src} {...reel} className={`${i % 2 ? "translate-y-8" : ""} ${i > 2 ? "hidden md:block" : ""}`} />

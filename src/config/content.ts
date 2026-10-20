@@ -373,6 +373,16 @@ export const content = {
     reels: ["galeria-2", "galeria-4", "galeria-6", "galeria-8", "galeria-1", "galeria-3"].map(video),
   },
 
+  // Visor a pantalla completa de los videos de ejemplo (portada, Formatos, galería y cierre).
+  viewer: {
+    open: "Ver el video",
+    close: "Cerrar",
+    cta: "Quiero uno así",
+    // {video} es el rótulo del video (ej. "Pizzería · UGC"); sin rótulo se usa el mensaje base.
+    message: "Hola! Vi el video {video} y quiero uno así para mi tienda.",
+    emptyMessage: "Hola! Vi un video de ejemplo y quiero uno así para mi tienda.",
+  },
+
   footer: {
     by: "by MCM Digital",
     rights: "Todos los derechos reservados.",

@@ -23,6 +23,7 @@ import { Trust } from "@/components/sections/Trust";
 import { Faq } from "@/components/sections/Faq";
 import { Closing } from "@/components/sections/Closing";
 import { Reveals } from "@/components/motion/Reveals";
+import { VideoViewer } from "@/components/ui/VideoViewer";
 
 export default function Home() {
   return (
@@ -45,6 +46,7 @@ export default function Home() {
       </main>
       <MobileCta />
       <Reveals />
+      <VideoViewer />
     </>
   );
 }

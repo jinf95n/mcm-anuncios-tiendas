@@ -2,7 +2,7 @@ import { content } from "@/config/content";
 import { AutoVideo } from "@/components/motion/AutoVideo";
 import { FormatsStage } from "@/components/motion/FormatsStage";
 import { Container } from "@/components/ui/Container";
-import { FrameMarks } from "@/components/ui/Reel";
+import { FrameMarks, VideoTrigger } from "@/components/ui/Reel";
 import { Title } from "@/components/ui/Title";
 import { Toma } from "@/components/ui/Toma";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
@@ -53,8 +53,9 @@ export function Formats() {
                 className={`absolute inset-0 bg-gradient-to-t from-background to-transparent ${item.vertical ? "via-background/70 via-30% to-60%" : "via-background/20"}`}
               />
               <FrameMarks inset="inset-5 md:inset-8" />
+              {item.media.type === "video" && <VideoTrigger {...item.media} label={item.name} />}
 
-              <Container className="relative flex h-full flex-col justify-end pb-12 md:pb-16">
+              <Container className="pointer-events-none relative z-20 flex h-full flex-col justify-end pb-12 md:pb-16">
                 <div data-format-text>
                 <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">
                   Formato {String(i + 1).padStart(2, "0")} / {String(formats.items.length).padStart(2, "0")}

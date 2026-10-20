@@ -32,7 +32,6 @@ export function Hero() {
             {/* Muro de reels: columnas desfasadas, como una hoja de contactos de video que sigue. */}
             <div
               className="relative -mx-5 mt-8 md:-mx-10 md:mt-10 lg:absolute lg:bottom-0 lg:left-[44%] lg:right-0 lg:top-16 lg:mx-0 lg:mt-0 xl:left-[40%]"
-              aria-hidden
             >
               <div className="grid h-[260px] grid-cols-3 gap-1.5 overflow-hidden md:h-[520px] md:gap-3 lg:h-full">
                 {[0, 1, 2].map((col) => (

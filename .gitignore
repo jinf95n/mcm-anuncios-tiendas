@@ -44,3 +44,6 @@ next-env.d.ts
 .open-next
 .wrangler
 .dev.vars
+
+# originales de medios (pesados, no se versionan)
+media-raw/

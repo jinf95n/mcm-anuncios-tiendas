@@ -25,37 +25,47 @@ export function Formats() {
       </Container>
 
       <FormatsStage>
-        {formats.items.map((item, i) => (
-          <article key={item.name} data-format className="relative h-[86svh] min-h-[520px] overflow-hidden bg-surface">
-            {item.media.type === "video" ? (
+        {formats.items.map((item, i) => {
+          // Vertical en pantalla horizontal: entero y centrado, sin recortar.
+          const fit = item.vertical ? "object-cover landscape:object-contain" : "object-cover";
+          const still = item.media.type === "video" ? item.media.poster : item.media.src;
+          return (
+            <article key={item.name} data-format className="relative h-[86svh] min-h-[520px] overflow-hidden bg-surface">
               <div data-format-media className="absolute inset-0">
-                <AutoVideo className="h-full w-full object-cover" src={item.media.src} poster={item.media.poster} />
+                {item.vertical && (
+                  // Fondo: el mismo medio desenfocado (en video, su poster, para no decodificar dos videos).
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="absolute inset-0 hidden h-full w-full scale-110 object-cover opacity-50 blur-2xl landscape:block" src={still} alt="" loading="lazy" />
+                )}
+                {item.media.type === "video" ? (
+                  <AutoVideo className={`relative h-full w-full ${fit}`} src={item.media.src} poster={item.media.poster} />
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className={`relative h-full w-full ${fit}`} src={item.media.src} alt="" loading="lazy" />
+                )}
               </div>
-            ) : (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img data-format-media className="absolute inset-0 h-full w-full object-cover" src={item.media.src} alt="" loading="lazy" />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-            <FrameMarks inset="inset-5 md:inset-8" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+              <FrameMarks inset="inset-5 md:inset-8" />
 
-            <Container className="relative flex h-full flex-col justify-end pb-12 md:pb-16">
-              <div data-format-text>
-              <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">
-                Formato {String(i + 1).padStart(2, "0")} / {String(formats.items.length).padStart(2, "0")}
-              </p>
-              <div className="mt-3 flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-10">
-                <div>
-                  <h3 className="font-serif text-[clamp(3rem,9vw,6rem)] leading-[0.95] tracking-[-0.02em]">{item.name}</h3>
-                  <p className="mt-4 max-w-[40ch] text-[17px] leading-[1.5] md:text-[19px]">{item.detail}</p>
-                </div>
-                <p className="font-mono text-[clamp(1.25rem,2.4vw,1.75rem)] uppercase tracking-[0.04em] text-rec">
-                  {item.stat}
+              <Container className="relative flex h-full flex-col justify-end pb-12 md:pb-16">
+                <div data-format-text>
+                <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">
+                  Formato {String(i + 1).padStart(2, "0")} / {String(formats.items.length).padStart(2, "0")}
                 </p>
-              </div>
-              </div>
-            </Container>
-          </article>
-        ))}
+                <div className="mt-3 flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-10">
+                  <div>
+                    <h3 className="font-serif text-[clamp(3rem,9vw,6rem)] leading-[0.95] tracking-[-0.02em]">{item.name}</h3>
+                    <p className="mt-4 max-w-[40ch] text-[17px] leading-[1.5] md:text-[19px]">{item.detail}</p>
+                  </div>
+                  <p className="font-mono text-[clamp(1.25rem,2.4vw,1.75rem)] uppercase tracking-[0.04em] text-rec">
+                    {item.stat}
+                  </p>
+                </div>
+                </div>
+              </Container>
+            </article>
+          );
+        })}
       </FormatsStage>
 
       <Container className="mt-12">

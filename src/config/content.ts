@@ -51,29 +51,34 @@ export const content = {
     title: ["Calidad de *comercial.*", "Con tu producto real."],
     intro:
       "Partimos del link de tu producto: tus fotos, tu logo y tus colores. Sin rodaje, sin modelos, sin locación.",
+    // vertical: en pantallas horizontales se muestra entero, centrado, sobre su versión desenfocada.
     items: [
       {
         name: "Foto de estudio",
         detail: "Tu producto con luz y fondo de estudio, sin sacar una foto.",
         stat: "Sin sesión de fotos",
+        vertical: false,
         media: { type: "image" as const, src: media("formato-estudio.jpg") },
       },
       {
         name: "Estático",
         detail: "Piezas para feed e historias, listas para pautar.",
         stat: "20 versiones",
+        vertical: true,
         media: { type: "image" as const, src: media("formato-estatico.jpg") },
       },
       {
         name: "Comercial",
         detail: "Video con ritmo y escenas de comercial, con tu producto como protagonista.",
         stat: "Listo en días",
+        vertical: false,
         media: { type: "video" as const, ...video("formato-comercial") },
       },
       {
         name: "UGC",
         detail: "Una persona recomendando tu producto, como en un reel.",
         stat: "Sin modelos ni rodaje",
+        vertical: true,
         media: { type: "video" as const, ...video("formato-ugc") },
       },
     ],

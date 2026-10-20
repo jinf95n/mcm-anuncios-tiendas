@@ -68,7 +68,7 @@ export function BeforeAfterSlider({ before, after, hint }: Props) {
         onPointerMove={onPointerMove}
         onPointerUp={stop}
         onPointerCancel={stop}
-        className="relative aspect-[4/5] cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-[6px] bg-surface"
+        className="relative aspect-[3/4] cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-[6px] bg-surface"
         style={{ "--split": `${split}%` } as CSSProperties}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -45,6 +45,12 @@ html {
   scrollbar-color: var(--line) var(--background);
 }
 
+/* ScrollTrigger redondea hacia arriba el ancho del pin-spacer (1265 px con un body de
+   1264,67 px a escala 150%) y las secciones fijas a sangre desbordaban medio píxel. */
+.pin-spacer {
+  max-width: 100%;
+}
+
 /* Grano de película: capa fija sobre todo el sitio, sin interferir con los clics. */
 body::after {
   content: "";

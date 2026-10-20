@@ -123,7 +123,7 @@ export function Analysis() {
         </AnalysisStage>
 
         {/* Qué sale del análisis → qué anuncio le corresponde */}
-        <ul className="mt-16 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
+        <ul data-reveal="stagger" className="mt-16 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
           {analysis.map.map((row) => (
             // Con 2 columnas, la quinta fila ocupa las dos (sin celda vacía).
             <li key={row.data} className="flex flex-col gap-3 bg-background p-5 sm:last:odd:col-span-2 lg:last:odd:col-span-1">

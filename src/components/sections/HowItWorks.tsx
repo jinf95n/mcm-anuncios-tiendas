@@ -14,7 +14,7 @@ export function HowItWorks() {
         <Toma {...how.toma} />
         <Title lines={how.title} className="mt-12 text-[clamp(2.5rem,6vw,4.5rem)] md:mt-16" />
 
-        <ol className="mt-14 grid gap-px border border-line bg-line md:mt-20 md:grid-cols-4">
+        <ol data-reveal="stagger" className="mt-14 grid gap-px border border-line bg-line md:mt-20 md:grid-cols-4">
           {how.steps.map((step, i) => {
             const isYours = i === how.steps.length - 1;
             return (
@@ -32,7 +32,7 @@ export function HowItWorks() {
         <div className="mt-16 grid gap-8 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">
             <h3 className="font-serif text-[clamp(2rem,4.5vw,3rem)] leading-[1.05]">{how.yours.title}</h3>
-            <ul className="mt-6 space-y-3">
+            <ul data-reveal="stagger" className="mt-6 space-y-3">
               {how.yours.items.map((item) => (
                 <li key={item} className="flex gap-3 text-[18px] md:text-[20px]">
                   <span className="mt-[0.6em] h-1.5 w-1.5 shrink-0 bg-rec" aria-hidden />

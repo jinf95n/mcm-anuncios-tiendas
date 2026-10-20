@@ -20,7 +20,7 @@ export function Faq() {
             </WhatsAppButton>
           </div>
 
-          <div className="md:col-span-7 md:col-start-6">
+          <div data-reveal="stagger" className="md:col-span-7 md:col-start-6">
             {faq.items.map((item) => (
               <details key={item.q} className="group border-t border-line last:border-b">
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-[19px] font-medium leading-[1.35] md:text-[21px] [&::-webkit-details-marker]:hidden">

@@ -15,7 +15,7 @@ export function BeforeAfter() {
         <div className="mt-12 grid gap-12 md:mt-16 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-4">
             <Title lines={ba.title} className="text-[clamp(2.5rem,6vw,4.5rem)]" />
-            <dl className="mt-10 space-y-5">
+            <dl data-reveal="stagger" className="mt-10 space-y-5">
               {[ba.before, ba.after].map((side) => (
                 <div key={side.label} className="border-t border-line pt-4">
                   <dt className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">{side.label}</dt>
@@ -26,7 +26,7 @@ export function BeforeAfter() {
           </div>
 
           {/* 3:4 entero en pantalla: el ancho se limita para que el alto no pase el 80% de la ventana. */}
-          <div className="md:col-span-7 md:col-start-6 md:ml-auto md:w-full md:max-w-[calc(80svh*3/4)]">
+          <div data-reveal="fade" className="md:col-span-7 md:col-start-6 md:ml-auto md:w-full md:max-w-[calc(80svh*3/4)]">
             <BeforeAfterSlider before={ba.before} after={ba.after} hint={ba.hint} />
           </div>
         </div>

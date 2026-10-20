@@ -22,6 +22,7 @@ import { Pricing } from "@/components/sections/Pricing";
 import { Trust } from "@/components/sections/Trust";
 import { Faq } from "@/components/sections/Faq";
 import { Closing } from "@/components/sections/Closing";
+import { Reveals } from "@/components/motion/Reveals";
 
 export default function Home() {
   return (
@@ -43,6 +44,7 @@ export default function Home() {
         <Closing />
       </main>
       <MobileCta />
+      <Reveals />
     </>
   );
 }

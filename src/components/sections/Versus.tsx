@@ -46,7 +46,7 @@ export function Versus() {
                   <th scope="col" className="pb-3 font-normal text-foreground">{versus.us.label}</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody data-reveal="stagger">
                 {versus.rows.map((row) => (
                   <tr key={row.label} className="border-t border-line align-top">
                     <th scope="row" className="py-4 pr-4 font-mono text-[12px] font-normal uppercase tracking-[0.08em] text-muted">
@@ -62,13 +62,13 @@ export function Versus() {
           </div>
 
           {/* Calculadora */}
-          <div className="lg:col-span-4 lg:col-start-9">
+          <div data-reveal="fade" className="lg:col-span-4 lg:col-start-9">
             <Calculator />
           </div>
         </div>
 
         {/* Por qué es más barato sin ser peor */}
-        <div className="mt-20 grid gap-6 border-t border-line pt-10 md:grid-cols-12 md:gap-8">
+        <div data-reveal="fade" className="mt-20 grid gap-6 border-t border-line pt-10 md:grid-cols-12 md:gap-8">
           <h3 className="font-serif text-[clamp(1.75rem,3.5vw,2.25rem)] leading-[1.1] md:col-span-5">{versus.why.title}</h3>
           <p className="max-w-[52ch] text-[18px] leading-[1.5] text-muted md:col-span-6 md:col-start-7 md:text-[20px]">
             {versus.why.text}

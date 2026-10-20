@@ -13,7 +13,7 @@ export function Problem() {
         <Toma {...problem.toma} />
         <div className="mt-12 grid gap-12 md:mt-16 md:grid-cols-12 md:gap-8">
           <Title lines={problem.title} className="text-[clamp(2.5rem,6vw,4.5rem)] md:col-span-5" />
-          <ul className="md:col-span-7 md:col-start-6 lg:col-span-6 lg:col-start-7">
+          <ul data-reveal="stagger" className="md:col-span-7 md:col-start-6 lg:col-span-6 lg:col-start-7">
             {problem.pains.map((pain) => (
               <li key={pain.tc} className="grid grid-cols-[auto_1fr] gap-5 border-t border-line py-5 last:border-b">
                 <span className="pt-1 font-mono text-[12px] tabular-nums tracking-[0.08em] text-muted">{pain.tc}</span>

@@ -17,7 +17,7 @@ export function Includes() {
         <Toma {...includes.toma} />
         <Title lines={includes.title} className="mt-12 text-[clamp(2.5rem,6vw,4.5rem)] md:mt-16" />
 
-        <div className="mt-14 border border-line md:mt-20">
+        <div data-reveal="cut" className="mt-14 border border-line md:mt-20">
           {/* Regla de tiempo */}
           <div className="hidden grid-cols-[64px_1fr] border-b border-line md:grid">
             <span className="border-r border-line" />

@@ -18,7 +18,7 @@ export function Pricing() {
           <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">{pricing.note}</p>
         </div>
 
-        <ul className="mt-14 md:mt-20">
+        <ul data-reveal="stagger" className="mt-14 md:mt-20">
           {pricing.plans.map((plan) => {
             const isAbono = plan.name === "Abono mensual";
             return (

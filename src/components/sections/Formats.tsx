@@ -19,7 +19,7 @@ export function Formats() {
         {/* Título a escala de portada, cruzando la grilla; la intro queda chica, a un costado. */}
         <div className="mt-12 grid gap-8 md:mt-16 md:grid-cols-12">
           <Title lines={formats.title} className="text-[clamp(3rem,9vw,7.5rem)] md:col-span-12" />
-          <p className="max-w-[40ch] text-[18px] leading-[1.5] text-muted md:col-span-4 md:col-start-9">
+          <p data-reveal="fade" className="max-w-[40ch] text-[18px] leading-[1.5] text-muted md:col-span-4 md:col-start-9">
             {formats.intro}
           </p>
         </div>

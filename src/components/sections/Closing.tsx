@@ -17,7 +17,7 @@ export function Closing() {
         <Toma {...closing.toma} />
         <div className="mt-16 md:mt-24">
           <Title lines={closing.title} className="text-[clamp(3rem,10vw,7.5rem)]" />
-          <div className="mt-8 flex flex-col gap-8 md:mt-10 md:flex-row md:items-end md:justify-between">
+          <div data-reveal="fade" className="mt-8 flex flex-col gap-8 md:mt-10 md:flex-row md:items-end md:justify-between">
             <p className="max-w-[40ch] text-[18px] leading-[1.5] text-muted">{closing.text}</p>
             <WhatsAppButton message={closing.message} size="lg" className="w-full shrink-0 sm:w-auto">
               {closing.cta}
@@ -28,7 +28,7 @@ export function Closing() {
 
       {/* Tira de reels a sangre, cortada en seco contra el pie: eco del muro de la portada. */}
       <div className="relative mt-16 md:mt-24" aria-hidden>
-        <div className="grid h-[220px] grid-cols-3 gap-1.5 overflow-hidden md:h-[360px] md:grid-cols-6 md:gap-3">
+        <div data-reveal="cut" className="grid h-[220px] grid-cols-3 gap-1.5 overflow-hidden md:h-[360px] md:grid-cols-6 md:gap-3">
           {closing.reels.map((reel, i) => (
             <Reel key={reel.src} {...reel} className={`${i % 2 ? "translate-y-8" : ""} ${i > 2 ? "hidden md:block" : ""}`} />
           ))}

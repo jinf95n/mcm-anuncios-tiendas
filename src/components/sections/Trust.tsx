@@ -13,7 +13,7 @@ export function Trust() {
         <Toma {...trust.toma} />
         <Title lines={trust.title} className="mt-12 text-[clamp(2.5rem,6vw,4.5rem)] md:mt-16" />
 
-        <ul className="mt-12 md:mt-16">
+        <ul data-reveal="stagger" className="mt-12 md:mt-16">
           {trust.promises.map((p) => (
             <li
               key={p}
@@ -24,7 +24,7 @@ export function Trust() {
           ))}
         </ul>
 
-        <div className="mt-20 grid gap-10 md:grid-cols-3 md:gap-8">
+        <div data-reveal="stagger" className="mt-20 grid gap-10 md:grid-cols-3 md:gap-8">
           {trust.testimonials.map((t) => (
             <figure key={t.name} className="flex flex-col">
               <p className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.14em] text-muted">{trust.testimonialsLabel}</p>

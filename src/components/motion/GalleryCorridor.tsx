@@ -74,7 +74,10 @@ export function GalleryCorridor({ children }: { children: ReactNode }) {
         };
 
         const camera = { z: 0 };
-        const tween = gsap.to(camera, {
+        // Se lleva aparte (no con tween.scrollTrigger): si la página carga con el scroll avanzado,
+        // ScrollTrigger llama a onUpdate antes de que exista el tween.
+        let active = false;
+        gsap.to(camera, {
           z: depth,
           ease: "none",
           scrollTrigger: {
@@ -84,12 +87,13 @@ export function GalleryCorridor({ children }: { children: ReactNode }) {
             pin: true,
             scrub: 0.6,
             onToggle: (self) => {
-              if (!self.isActive) pauseAll();
+              active = self.isActive;
+              if (!active) pauseAll();
             },
           },
           onUpdate: () => {
             gsap.set(list, { z: camera.z });
-            update(camera.z, Boolean(tween.scrollTrigger?.isActive));
+            update(camera.z, active);
           },
         });
         update(0, false);

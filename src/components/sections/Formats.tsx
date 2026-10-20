@@ -16,9 +16,10 @@ export function Formats() {
     <section id="formatos" className="py-24 md:py-36">
       <Container>
         <Toma {...formats.toma} />
+        {/* Título a escala de portada, cruzando la grilla; la intro queda chica, a un costado. */}
         <div className="mt-12 grid gap-8 md:mt-16 md:grid-cols-12">
-          <Title lines={formats.title} className="text-[clamp(2.5rem,6vw,4.5rem)] md:col-span-7" />
-          <p className="max-w-[44ch] self-end text-[18px] leading-[1.5] text-muted md:col-span-4 md:col-start-9">
+          <Title lines={formats.title} className="text-[clamp(3rem,9vw,7.5rem)] md:col-span-12" />
+          <p className="max-w-[40ch] text-[18px] leading-[1.5] text-muted md:col-span-4 md:col-start-9">
             {formats.intro}
           </p>
         </div>
@@ -60,7 +61,7 @@ export function Formats() {
                 </p>
                 <div className="mt-3 flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-10">
                   <div>
-                    <h3 className="font-serif text-[clamp(3rem,9vw,6rem)] leading-[0.95] tracking-[-0.02em]">{item.name}</h3>
+                    <h3 className="font-serif text-[clamp(3rem,9vw,7.5rem)] leading-[0.95] tracking-[-0.02em]">{item.name}</h3>
                     <p className="mt-4 max-w-[40ch] text-[17px] leading-[1.5] md:text-[19px]">{item.detail}</p>
                   </div>
                   <p className="font-mono text-[clamp(1.25rem,2.4vw,1.75rem)] uppercase tracking-[0.04em] text-rec">

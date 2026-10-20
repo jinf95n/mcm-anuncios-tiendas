@@ -369,6 +369,8 @@ export const content = {
     text: "Mandanos el link de un producto y te hacemos la muestra gratis: 2 estáticos y 1 video corto.",
     cta: "Pedí tu muestra gratis",
     message: "Hola! Quiero mi muestra gratis.",
+    // Tira de reels a sangre al final, eco del muro de la portada.
+    reels: ["galeria-2", "galeria-4", "galeria-6", "galeria-8", "galeria-1", "galeria-3"].map(video),
   },
 
   footer: {

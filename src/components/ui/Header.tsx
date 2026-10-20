@@ -11,7 +11,7 @@ export function Header() {
       <div className="mx-auto flex h-14 max-w-[1440px] items-center gap-4 px-5 md:h-16 md:px-10">
         <a href="#top" className="flex items-baseline gap-3" aria-label={`${site.name}, ir al inicio`}>
           <Wordmark className="text-[26px] md:text-[28px]" />
-          <span className="hidden font-mono text-[11px] uppercase tracking-[0.14em] text-muted sm:inline">
+          <span className="hidden font-mono text-[11px] md:text-[12px] uppercase tracking-[0.14em] text-muted sm:inline">
             {content.footer.by}
           </span>
         </a>

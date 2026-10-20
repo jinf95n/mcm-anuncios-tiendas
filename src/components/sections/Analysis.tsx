@@ -42,7 +42,7 @@ export function Analysis() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={product.image} alt="" className="aspect-[4/5] w-20 shrink-0 rounded-[3px] object-cover sm:w-28 xl:w-44" />
                   <div className="flex min-w-0 flex-col">
-                    <span className="w-fit border border-rec px-2 py-0.5 font-mono text-[11px] uppercase tracking-[0.14em] text-rec">
+                    <span className="w-fit border border-rec px-2 py-0.5 font-mono text-[11px] md:text-[12px] uppercase tracking-[0.14em] text-rec">
                       <span data-split>{product.status}</span>
                     </span>
                     <h3 data-split className="mt-3 text-[20px] font-semibold leading-tight md:text-[26px]">
@@ -54,7 +54,7 @@ export function Analysis() {
                         const isDays = d.value === String(signal.days);
                         return (
                           <div key={d.label}>
-                            <dt data-split className="font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
+                            <dt data-split className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.1em] text-muted">
                               {d.label}
                             </dt>
                             <dd className="mt-1 whitespace-nowrap font-mono text-[15px] tabular-nums md:text-[18px]">
@@ -95,7 +95,7 @@ export function Analysis() {
                 <FrameMarks />
                 <div className="relative flex h-full flex-col justify-between p-6">
                   <div>
-                    <p data-ad-piece className="font-mono text-[11px] uppercase tracking-[0.16em] text-rec">
+                    <p data-ad-piece className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.16em] text-rec">
                       {ad.kicker}
                     </p>
                     <p data-ad-piece className="mt-2 font-serif text-[40px] italic leading-none">

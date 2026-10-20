@@ -15,7 +15,7 @@ export function Reel({ src, poster, label, className = "" }: Props) {
       <AutoVideo className="absolute inset-0 h-full w-full object-cover" src={src} poster={poster} />
       <FrameMarks />
       {label && (
-        <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/80 to-transparent p-3 pt-10 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground">
+        <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/80 to-transparent p-3 pt-10 font-mono text-[11px] md:text-[12px] uppercase tracking-[0.12em] text-foreground">
           {label}
         </figcaption>
       )}

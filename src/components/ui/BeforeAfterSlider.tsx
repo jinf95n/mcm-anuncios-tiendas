@@ -82,8 +82,8 @@ export function BeforeAfterSlider({ before, after, hint }: Props) {
           style={{ clipPath: "inset(0 calc(100% - var(--split)) 0 0)" }}
           loading="lazy"
         />
-        <span className="pointer-events-none absolute left-4 top-4 font-mono text-[11px] uppercase tracking-[0.14em]">{before.label}</span>
-        <span className="pointer-events-none absolute right-4 top-4 font-mono text-[11px] uppercase tracking-[0.14em] text-rec">
+        <span className="pointer-events-none absolute left-4 top-4 font-mono text-[11px] md:text-[12px] uppercase tracking-[0.14em]">{before.label}</span>
+        <span className="pointer-events-none absolute right-4 top-4 font-mono text-[11px] md:text-[12px] uppercase tracking-[0.14em] text-rec">
           {after.label}
         </span>
 

@@ -25,7 +25,7 @@ Detalle de la mecánica y las adaptaciones aprobadas en `BRIEF.md` → "Referenc
 ## Tipografía
 - Títulos: Instrument Serif 400 (única), itálica para énfasis (una o dos palabras por título). Tamaños aproximados: hero 64–120 px (clamp), H2 40–72 px, H3 28–36 px. Interlineado ajustado (1–1,05).
 - Cuerpo y UI: Inter Tight 400/500/600. Cuerpo 17–18 px, interlineado 1,5. Botones en 500–600.
-- Detalles (timecode, "TOMA 01", datos, precios en tablas, labels): JetBrains Mono 400/500, 12–14 px, mayúsculas con tracking amplio en labels. Números con `tabular-nums` para que el conteo no salte.
+- Detalles (timecode, "TOMA 01", datos, precios en tablas, labels): JetBrains Mono 400/500, 12–14 px (los labels más chicos: 11 px en celular y 12 px desde 768 px, `text-[11px] md:text-[12px]`), mayúsculas con tracking amplio en labels. Números con `tabular-nums` para que el conteo no salte.
 - Variables CSS: `--font-serif`, `--font-sans`, `--font-mono` (Tailwind: `font-serif`, `font-sans`, `font-mono`).
 
 ## Logo

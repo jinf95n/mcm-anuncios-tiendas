@@ -27,7 +27,7 @@ export function Trust() {
         <div className="mt-20 grid gap-10 md:grid-cols-3 md:gap-8">
           {trust.testimonials.map((t) => (
             <figure key={t.name} className="flex flex-col">
-              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">{trust.testimonialsLabel}</p>
+              <p className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.14em] text-muted">{trust.testimonialsLabel}</p>
               <blockquote className="mt-4 text-[18px] leading-[1.5]">“{t.quote}”</blockquote>
               <figcaption className="mt-5 border-t border-line pt-3 text-[14px]">
                 {t.name} <span className="text-muted">· {t.store}</span>

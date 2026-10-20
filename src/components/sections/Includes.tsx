@@ -21,7 +21,7 @@ export function Includes() {
           {/* Regla de tiempo */}
           <div className="hidden grid-cols-[64px_1fr] border-b border-line md:grid">
             <span className="border-r border-line" />
-            <div className="flex justify-between px-3 py-2 font-mono text-[11px] tabular-nums text-muted">
+            <div className="flex justify-between px-3 py-2 font-mono text-[11px] md:text-[12px] tabular-nums text-muted">
               {ruler.map((t) => (
                 <span key={t}>{t}</span>
               ))}
@@ -42,7 +42,7 @@ export function Includes() {
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                     <h3 className="font-serif text-[26px] leading-[1.1] md:text-[30px]">{t.name}</h3>
                     {t.optional && (
-                      <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">{includes.optionalLabel}</span>
+                      <span className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.14em] text-muted">{includes.optionalLabel}</span>
                     )}
                   </div>
                   <p className="mt-2 max-w-[48ch] text-[16px] leading-[1.5] text-muted">{t.text}</p>

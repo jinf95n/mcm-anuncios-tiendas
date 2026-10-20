@@ -38,7 +38,7 @@ export function Versus() {
           <div className="lg:col-span-7">
             <table className="w-full border-collapse text-left text-[15px] md:text-[16px]">
               <thead>
-                <tr className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+                <tr className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.12em] text-muted">
                   <th scope="col" className="w-[30%] pb-3 font-normal">
                     <span className="sr-only">Comparación</span>
                   </th>

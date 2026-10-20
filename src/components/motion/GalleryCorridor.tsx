@@ -8,7 +8,7 @@ const SIDE = 300; // separación de cada pared respecto del centro (px)
 
 // Galería como pasillo en CSS 3D (ref. virtuallyeverafter): los reels cuelgan alternados
 // en las paredes y el scroll mueve la cámara hacia adelante. Solo se reproduce el reel
-// más cercano. Solo en desktop con movimiento; en celular queda la tira con swipe y con
+// más cercano. Solo desde 1024 px con movimiento; en celular y tablet queda la tira con swipe y con
 // reduced-motion, la grilla estática.
 export function GalleryCorridor({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,7 +16,7 @@ export function GalleryCorridor({ children }: { children: ReactNode }) {
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference) and (min-width: 768px)", () => {
+      mm.add("(prefers-reduced-motion: no-preference) and (min-width: 1024px)", () => {
         const stage = ref.current!;
         const list = stage.querySelector<HTMLElement>("ul")!;
         const items = gsap.utils.toArray<HTMLElement>("li", stage);
@@ -110,7 +110,7 @@ export function GalleryCorridor({ children }: { children: ReactNode }) {
   );
 
   return (
-    <div ref={ref} className="mx-auto mt-14 max-w-[1280px] md:mt-20 md:px-10">
+    <div ref={ref} className="mx-auto mt-14 max-w-[1280px] md:mt-20 lg:px-10">
       {children}
     </div>
   );

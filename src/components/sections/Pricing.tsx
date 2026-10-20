@@ -28,14 +28,14 @@ export function Pricing() {
                   plan.featured ? "border-rec md:-mx-6 md:border md:px-6" : "border-line last:border-b"
                 }`}
               >
-                <div className="md:col-span-4">
+                <div className="md:col-span-12 lg:col-span-4">
                   {plan.featured && (
                     <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.14em] text-rec">{pricing.featuredLabel}</p>
                   )}
                   <h3 className="font-serif text-[clamp(2rem,4vw,2.75rem)] leading-none">{plan.name}</h3>
                 </div>
 
-                <div className="md:col-span-5">
+                <div className="md:col-span-7 lg:col-span-5">
                   <p className="max-w-[46ch] text-[17px] leading-[1.5] text-muted">{plan.detail}</p>
 
                   {isAbono && (
@@ -61,8 +61,8 @@ export function Pricing() {
                   )}
                 </div>
 
-                <div className="flex flex-col gap-4 md:col-span-3 md:items-end md:text-right">
-                  <p className={`font-mono text-[22px] tabular-nums ${plan.featured ? "text-rec" : ""}`}>{plan.price}</p>
+                <div className="flex flex-col gap-4 md:col-span-5 md:items-end md:text-right lg:col-span-3">
+                  <p className={`whitespace-nowrap font-mono text-[22px] tabular-nums ${plan.featured ? "text-rec" : ""}`}>{plan.price}</p>
                   <WhatsAppButton message={plan.message} variant={plan.featured ? "primary" : "ghost"}>
                     {plan.cta}
                   </WhatsAppButton>

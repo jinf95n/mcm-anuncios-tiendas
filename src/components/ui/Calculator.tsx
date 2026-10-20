@@ -49,7 +49,7 @@ export function Calculator() {
                   type="button"
                   onClick={() => f.set(f.value - 1)}
                   disabled={!canDec}
-                  className="h-9 w-9 border border-line text-[18px] leading-none transition-colors duration-150 hover:border-foreground disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-line"
+                  className="h-10 w-10 shrink-0 border border-line text-[18px] leading-none transition-colors duration-150 hover:border-foreground disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-line"
                   aria-label={`Menos ${name}`}
                 >
                   −
@@ -61,7 +61,7 @@ export function Calculator() {
                   type="button"
                   onClick={() => f.set(f.value + 1)}
                   disabled={!canInc}
-                  className="h-9 w-9 border border-line text-[18px] leading-none transition-colors duration-150 hover:border-foreground disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-line"
+                  className="h-10 w-10 shrink-0 border border-line text-[18px] leading-none transition-colors duration-150 hover:border-foreground disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-line"
                   aria-label={`Más ${name}`}
                 >
                   +

@@ -16,7 +16,8 @@ export function FormatsStage({ children }: { children: ReactNode }) {
       mm.add(
         {
           motion: "(prefers-reduced-motion: no-preference)",
-          mobile: "(max-width: 767px)",
+          // Celular y tablet vertical: tarjeta al 80% y menos recorrido.
+          mobile: "(max-width: 1023px)",
         },
         (ctx) => {
           const { motion, mobile } = ctx.conditions as { motion: boolean; mobile: boolean };

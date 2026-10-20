@@ -8,7 +8,7 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 const { gallery } = content;
 
-// TOMA 09. Galería de reels: tira con swipe en celular y grilla en desktop.
+// TOMA 09. Galería de reels: tira con swipe en celular y tablet, grilla desde 1024 px.
 // Con movimiento en desktop, GalleryCorridor la convierte en el pasillo en CSS 3D.
 export function Gallery() {
   return (
@@ -22,9 +22,9 @@ export function Gallery() {
       </Container>
 
       <GalleryCorridor>
-        <ul className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-4 md:grid md:grid-cols-4 md:overflow-visible md:px-0 md:pb-0">
+        <ul className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-4 md:px-10 lg:grid lg:grid-cols-4 lg:overflow-visible lg:px-0 lg:pb-0">
           {gallery.reels.map((reel, i) => (
-            <li key={reel.src} className={`w-[68vw] max-w-[300px] shrink-0 snap-center md:w-auto md:max-w-none ${i % 2 ? "md:translate-y-16" : ""}`}>
+            <li key={reel.src} className={`w-[68vw] max-w-[300px] shrink-0 snap-center lg:w-auto lg:max-w-none ${i % 2 ? "lg:translate-y-16" : ""}`}>
               <Reel {...reel} />
             </li>
           ))}

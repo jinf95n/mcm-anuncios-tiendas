@@ -6,7 +6,8 @@ import { gsap, SplitText, useGSAP } from "@/lib/gsap";
 // "Del análisis a los anuncios" (ref. junkbranding): primero cuenta el dato de la tienda
 // (47 días sin venderse); después la ficha se desarma letra por letra y viaja hasta el
 // anuncio, que se abre desde el centro y se arma con cortes secos.
-// Desktop: sección fija de 1,4 pantallas. Celular: misma secuencia atada al scroll, sin fijar.
+// Desde 1024 px: sección fija de 1,4 pantallas y el anuncio termina centrado. Celular y tablet:
+// misma secuencia atada al scroll, sin fijar.
 // Sin animación queda la ficha y el anuncio lado a lado, con los valores finales.
 export function AnalysisStage({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -17,7 +18,7 @@ export function AnalysisStage({ children }: { children: ReactNode }) {
       mm.add(
         {
           motion: "(prefers-reduced-motion: no-preference)",
-          mobile: "(max-width: 767px)",
+          mobile: "(max-width: 1023px)",
         },
         (ctx) => {
           const { motion, mobile } = ctx.conditions as { motion: boolean; mobile: boolean };
@@ -27,6 +28,15 @@ export function AnalysisStage({ children }: { children: ReactNode }) {
           const ficha = stage.querySelector<HTMLElement>("[data-ficha]")!;
           const ad = stage.querySelector<HTMLElement>("[data-ad]")!;
           const split = SplitText.create(stage.querySelectorAll("[data-split]"), { type: "words,chars" });
+
+          // El anuncio se arma en el centro de la escena: así la composición final queda
+          // centrada bajo el dato, sin la columna de la ficha vacía a la izquierda.
+          const toCenter = () => {
+            const s = stage.getBoundingClientRect();
+            const a = ad.getBoundingClientRect();
+            const current = Number(gsap.getProperty(ad, "x")) || 0;
+            return s.left + s.width / 2 - (a.left + a.width / 2 - current);
+          };
 
           // Distancia del centro de la ficha al centro del anuncio (sin contar el x/y ya aplicado).
           const delta = (axis: "x" | "y") => () => {
@@ -45,7 +55,7 @@ export function AnalysisStage({ children }: { children: ReactNode }) {
               : { trigger: stage, start: "top top+=64", end: "+=140%", pin: true, scrub: 0.6, invalidateOnRefresh: true },
           });
 
-          tl.set(ad, { clipPath: "inset(50% 50% round 6px)" })
+          tl.set(ad, { clipPath: "inset(50% 50% round 6px)", x: mobile ? 0 : toCenter })
             .set("[data-ad-piece]", { autoAlpha: 0 })
             // 1. El dato cuenta: 0 → 47 días sin venderse.
             .fromTo("[data-count-days]", { textContent: 0 }, { textContent: 47, snap: { textContent: 1 }, duration: 1.2 })
